@@ -39,15 +39,15 @@
         <div class="col-md-12 col-lg-12">
         <div class="fBox">
 
-        <section id="main1" class="element">
+        <section id="bch" class="element">
 
           <div class='row card'>
 
-          <div class="title">main hospital</div>
+          <div class="title">Boston Children's Hospital</div>
 
           <template if="{{contact != null}}">
             <template repeat="{{location in contact.feed.entry}}">
-              <template if="{{location.gsx$location.$t === 'main'}}">
+              <template if="{{location.gsx$location.$t === 'bch'}}">
 
                 <div class="info">
 
@@ -68,28 +68,28 @@
             </template>
           </template>
           <div class="map">
-            <div id="main-map"></div>
+            <div id="bch-map"></div>
           </div>
 
-          <div id='main-allnotes'>
+          <div id='bch-allnotes'>
             <div class="notes">
               <div>Notes</div>
-              <div id='main-notes'></div>
+              <div id='bch-notes'></div>
             </div>
           </div>
 
         </div>
         </section>
 
-        <section id="autumn" class="element">
+        <section id="ssh" class="element">
 
           <div class='row card'>
 
-          <div class="title">1 autumn street</div>
+          <div class="title">South Shore Hospital</div>
 
           <template if="{{contact != null}}">
             <template repeat="{{location in contact.feed.entry}}">
-              <template if="{{location.gsx$location.$t === 'autumn'}}">
+              <template if="{{location.gsx$location.$t === 'ssh'}}">
                 <div  class="info">
 
                   <div class='address'>
@@ -109,13 +109,13 @@
             </template>
           </template>
           <div class="map">
-            <div id="autumn-map"></div>
+            <div id="ssh-map"></div>
           </div>
 
-          <div id='autumn-allnotes'>
+          <div id='ssh-allnotes'>
             <div class="notes">
               <div>Notes</div>
-              <div id='autumn-notes'></div>
+              <div id='ssh-notes'></div>
             </div>
           </div>
 
@@ -123,16 +123,15 @@
 
 
         </section>
-
-        <section id="waltham" class="element">
+        <section id="semc" class="element">
 
           <div class='row card'>
 
-            <div class="title {{name}}">waltham</div>
+          <div class="title">St. Elizabeth's Medical Center</div>
 
           <template if="{{contact != null}}">
             <template repeat="{{location in contact.feed.entry}}">
-              <template if="{{location.gsx$location.$t === 'waltham'}}">
+              <template if="{{location.gsx$location.$t === 'semc'}}">
                 <div  class="info">
 
                   <div class='address'>
@@ -152,18 +151,140 @@
             </template>
           </template>
           <div class="map">
-            <div id="waltham-map"></div>
+            <div id="semc-map"></div>
           </div>
 
-          <div id='waltham-allnotes'>
+          <div id='semc-allnotes'>
             <div class="notes">
               <div>Notes</div>
-              <div id='waltham-notes'></div>
+              <div id='semc-notes'></div>
             </div>
           </div>
 
         </div>
-        </section>
+
+
+        <section id="bh" class="element">
+
+          <div class='row card'>
+
+          <div class="title">Beverly Hospital</div>
+
+          <template if="{{contact != null}}">
+            <template repeat="{{location in contact.feed.entry}}">
+              <template if="{{location.gsx$location.$t === 'bh'}}">
+                <div  class="info">
+
+                  <div class='address'>
+                    <div>{{location.gsx$name.$t}}</div>
+                    <div>{{location.gsx$address.$t}}</div>
+                    <div>{{location.gsx$city.$t}}, {{location.gsx$state.$t}} {{location.gsx$zip.$t}}</div>
+                  </div>
+
+                  <div class="icon phone">
+                    <span style="padding-left:5px;">{{location.gsx$phone.$t}}</span>
+                  </div>
+                  <div class="icon fax">
+                    <span style="padding-left:5px;">{{location.gsx$fax.$t}}</span>
+                  </div>
+                </div>
+              </template>
+            </template>
+          </template>
+          <div class="map">
+            <div id="bh-map"></div>
+          </div>
+
+          <div id='bh-allnotes'>
+            <div class="notes">
+              <div>Notes</div>
+              <div id='bh-notes'></div>
+            </div>
+          </div>
+
+        </div>
+
+
+        <section id="wh" class="element">
+
+          <div class='row card'>
+
+          <div class="title">Winchester Hospital</div>
+
+          <template if="{{contact != null}}">
+            <template repeat="{{location in contact.feed.entry}}">
+              <template if="{{location.gsx$location.$t === 'wh'}}">
+                <div  class="info">
+
+                  <div class='address'>
+                    <div>{{location.gsx$name.$t}}</div>
+                    <div>{{location.gsx$address.$t}}</div>
+                    <div>{{location.gsx$city.$t}}, {{location.gsx$state.$t}} {{location.gsx$zip.$t}}</div>
+                  </div>
+
+                  <div class="icon phone">
+                    <span style="padding-left:5px;">{{location.gsx$phone.$t}}</span>
+                  </div>
+                  <div class="icon fax">
+                    <span style="padding-left:5px;">{{location.gsx$fax.$t}}</span>
+                  </div>
+                </div>
+              </template>
+            </template>
+          </template>
+          <div class="map">
+            <div id="wh-map"></div>
+          </div>
+
+          <div id='wh-allnotes'>
+            <div class="notes">
+              <div>Notes</div>
+              <div id='wh-notes'></div>
+            </div>
+          </div>
+
+        </div>
+
+
+        <section id="hf" class="element">
+
+          <div class='row card'>
+
+          <div class="title">Holy Family/Good Sam</div>
+
+          <template if="{{contact != null}}">
+            <template repeat="{{location in contact.feed.entry}}">
+              <template if="{{location.gsx$location.$t === 'hf'}}">
+                <div  class="info">
+
+                  <div class='address'>
+                    <div>{{location.gsx$name.$t}}</div>
+                    <div>{{location.gsx$address.$t}}</div>
+                    <div>{{location.gsx$city.$t}}, {{location.gsx$state.$t}} {{location.gsx$zip.$t}}</div>
+                  </div>
+
+                  <div class="icon phone">
+                    <span style="padding-left:5px;">{{location.gsx$phone.$t}}</span>
+                  </div>
+                  <div class="icon fax">
+                    <span style="padding-left:5px;">{{location.gsx$fax.$t}}</span>
+                  </div>
+                </div>
+              </template>
+            </template>
+          </template>
+          <div class="map">
+            <div id="hf-map"></div>
+          </div>
+
+          <div id='hf-allnotes'>
+            <div class="notes">
+              <div>Notes</div>
+              <div id='hf-notes'></div>
+            </div>
+          </div>
+
+        </div>
 
     </div>
     </div>
@@ -201,7 +322,7 @@
                 this.$[this.contact.feed.entry[len].gsx$location.$t+'-notes'].innerHTML = this.contact.feed.entry[len].gsx$notes.$t;
               }
 
-              this.$[this.contact.feed.entry[len].gsx$location.$t+'-map'].innerHTML = this.contact.feed.entry[len].gsx$map.$t;
+	      this.$[this.contact.feed.entry[len].gsx$location.$t+'-map'].innerHTML = this.contact.feed.entry[len].gsx$map.$t;
             }
 
             this.cache = this.contact;

@@ -68,16 +68,16 @@
         <div class="col-md-12 col-lg-12">
           <div class="fBox">
 
-            <section id="faculty" class="element">
+            <section id="bch" class="element">
 
 
               <div class="row card">
 
-                <div class="title">faculty members</div>
+                <div class="title">Boston Children's Hospital</div>
 <div class='row'>
                 <template if="{{team != null}}">
                   <template repeat="{{people in team.feed.entry}}">
-                    <template if="{{people.gsx$group.$t === 'faculty'}}">
+                    <template if="{{people.gsx$group.$t === 'bch'}}">
                       <card-element cardObject="{{people}}" cardLoaded="{{peopleLoaded}}" cardSelected="{{peopleSelected}}"></card-element>
                     </template>
                   </template>
@@ -86,15 +86,15 @@
             </div>
             </section>
 
-            <section  id="staff" class="element">
+            <section  id="ssh" class="element">
 
                 <div class="row card">
 
-                  <div class="title">staff</div>
+                  <div class="title">South Shore Hospital</div>
 <div class='row'>
                 <template if="{{team != null}}">
                   <template repeat="{{people in team.feed.entry}}">
-                    <template if="{{people.gsx$group.$t === 'staff'}}">
+                    <template if="{{people.gsx$group.$t === 'ssh'}}">
 <card-element cardObject="{{people}}" cardLoaded="{{peopleLoaded}}" cardSelected="{{peopleSelected}}"></card-element>
                     </template>
                   </template>
@@ -103,15 +103,15 @@
             </div>
             </section>
 
-            <section id="collaborators" class="element">
+            <section id="semc" class="element">
 
               <div class="row card">
 
-                <div class="title">collaborators</div>
+                <div class="title">St. Elizabeth's Medical Center</div>
 <div class='row'>
                 <template if="{{team != null}}">
                   <template repeat="{{people in team.feed.entry}}">
-                    <template if="{{people.gsx$group.$t === 'collaborators'}}">
+                    <template if="{{people.gsx$group.$t === 'semc'}}">
 <card-element cardObject="{{people}}" cardLoaded="{{peopleLoaded}}" cardSelected="{{peopleSelected}}"></card-element>
                     </template>
                   </template>
@@ -120,15 +120,49 @@
             </div>
             </section>
 
-            <section id="alumni" class="element">
+            <section id="bh" class="element">
 
               <div class="row card">
 
-                <div class="title">alumni</div>
+                <div class="title">Berverly Hospital</div>
 <div class='row'>
                 <template if="{{team != null}}">
                   <template repeat="{{people in team.feed.entry}}">
-                    <template if="{{people.gsx$group.$t === 'alumni'}}">
+                    <template if="{{people.gsx$group.$t === 'bh'}}">
+<card-element cardObject="{{people}}" cardLoaded="{{peopleLoaded}}" cardSelected="{{peopleSelected}}"></card-element>
+                    </template>
+                  </template>
+                </template>
+              </div>
+              </div>
+	      </section>
+
+            <section id="wh" class="element">
+
+              <div class="row card">
+
+                <div class="title">Winchester Hospital</div>
+<div class='row'>
+                <template if="{{team != null}}">
+                  <template repeat="{{people in team.feed.entry}}">
+                    <template if="{{people.gsx$group.$t === 'wh'}}">
+<card-element cardObject="{{people}}" cardLoaded="{{peopleLoaded}}" cardSelected="{{peopleSelected}}"></card-element>
+                    </template>
+                  </template>
+                </template>
+              </div>
+              </div>
+	      </section>
+
+            <section id="hf" class="element">
+
+              <div class="row card">
+
+                <div class="title">Holy Family/Good Sam</div>
+<div class='row'>
+                <template if="{{team != null}}">
+                  <template repeat="{{people in team.feed.entry}}">
+                    <template if="{{people.gsx$group.$t === 'hf'}}">
 <card-element cardObject="{{people}}" cardLoaded="{{peopleLoaded}}" cardSelected="{{peopleSelected}}"></card-element>
                     </template>
                   </template>

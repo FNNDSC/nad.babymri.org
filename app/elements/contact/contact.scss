@@ -17,19 +17,34 @@
   content:"\f02f";
 }
 
-$main-color: #3f51b5;
-#main1 .card{
-  border-left: 5px solid $main-color;
+$bch-color: #3f51b5;
+#bch .card{
+  border-left: 5px solid $bch-color;
 }
 
-$autumn-color: #259b24;
-#autumn .card{
-  border-left: 5px solid $autumn-color;
+$ssh-color: #259b24;
+#ssh .card{
+  border-left: 5px solid $ssh-color;
 }
 
-$waltham-color: #ffc107;
-#waltham .card{
-  border-left: 5px solid $waltham-color;
+$semc-color: #ffc107;
+#semc .card{
+  border-left: 5px solid $semc-color;
+}
+
+$bh-color: #e51c23;
+#bh .card{
+  border-left: 5px solid $bh-color;
+}
+
+$wh-color: #3f51b5;
+#wh .card{
+  border-left: 5px solid $wh-color;
+}
+
+$hf-color: #259b24;
+#hf .card{
+  border-left: 5px solid $hf-color;
 }
 
 .info{

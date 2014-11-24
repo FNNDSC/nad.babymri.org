@@ -185,10 +185,12 @@ span{
   font-variant: small-caps;
 }
 
-$faculty-color: #3f51b5;
-$staff-color: #259b24;
-$alumni-color: #e51c23;
-$collaborators-color: #ffc107;
+$bch-color: #3f51b5;
+$ssh-color: #259b24;
+$bh-color: #e51c23;
+$semc-color: #ffc107;
+$wh-color: #3f51b5;
+$hf-color: #259b24;
 
 $general-color: #03a9f4;
 $press-color: #259b24;
@@ -210,8 +212,9 @@ $unix101-color: #ffc107;
 @each $category, $color in (general,$general-color), (press, $press-color),
                            (publication, $publication-color), (award,$award-color),
                            (talk, $talk-color),
-                           (faculty,$faculty-color), (staff, $staff-color),
-                           (alumni, $alumni-color), (collaborators,$collaborators-color),
+                           (bch,$bch-color), (ssh, $ssh-color),
+                           (semc, $semc-color), (bh,$bh-color),
+                           (wh, $wh-color), (hf,$hf-color),
                            (fnndsctalk,$fnndsctalk-color), (next, $next-color),
                            (unix101, $unix101-color),
                            (general,$general-color), (press, $press-color),
