@@ -20,7 +20,7 @@
             <span class="spinner"><img src="../../images/spinner.gif"></span>
           </template>
           <span class="small">We are</span>
-          <span class="large">the teaching/simulation/telemedicine team</span>
+          <span class="large">the teaching team</span>
         </div>
       </div>
     </div>
@@ -70,8 +70,9 @@
             <section id="mission" class="element">
 	    <div class="row card">
                 <div class="title">Our mission</div>
-		<div> Describe our mission?</div>
-		<div>Link to form and instruction?</div>
+		<div id='p1' class='missionP'></div>
+		<div id='p2' class='missionP'></div>
+		<div id='p3' class='missionP'></div>
 	    </div>
 	    </section>
 
@@ -119,7 +120,7 @@
   <script>
     Polymer('teaching-element', {
       name: 'teaching',
-      spreadsheet: '17hzI6ntmYJ44_Q_5K_sNaJK_JkcO9hY4wq8VBl6bNRs',
+      spreadsheet: '1x9Peba5kq_EXcBb9RO6AxuLOtMdZFt4sfq1nf2Nnr9E',
       cdn: 'https://googledrive.com/host/0B5vN-2WhAQb9WEl0Qko0SDEyR2c/',
       teaching: null,
       attached: function(){
@@ -192,16 +193,21 @@
         if(this.teaching){
           
           for(var i = 0; i < this.teaching.feed.entry.length; i++){
-	  
-      if(this.teaching.feed.entry[i].gsx$section.$t == 'schedule'){
-          this.$.calendar.innerHTML = this.teaching.feed.entry[i].gsx$group.$t;
-	  } 
-            
-		  // handle members
-		  if(this.teaching.feed.entry[i].gsx$section.$t == 'member'){	  
 
-		  // generate title if no title
-            if(!this.teaching.feed.entry[i].gsx$title){
+
+            if(this.teaching.feed.entry[i].gsx$section.$t == 'schedule'){
+              this.$.calendar.innerHTML = this.teaching.feed.entry[i].gsx$group.$t;
+	    } 
+
+	    if(this.teaching.feed.entry[i].gsx$section.$t == 'mission'){
+	      this.$[this.teaching.feed.entry[i].gsx$group.$t].innerHTML = this.teaching.feed.entry[i].gsx$hospital.$t;
+	    } 
+
+          // handle members
+	 if(this.teaching.feed.entry[i].gsx$section.$t == 'member'){	  
+
+	 // generate title if no title
+          if(!this.teaching.feed.entry[i].gsx$title){
               this.teaching.feed.entry[i].gsx$title = {$t:''};
               this.teaching.feed.entry[i].gsx$title.$t = this.teaching.feed.entry[i].gsx$firstname.$t + ' ' + this.teaching.feed.entry[i].gsx$middlename.$t + ' ' + this.teaching.feed.entry[i].gsx$lastname.$t;
               if(this.teaching.feed.entry[i].gsx$suffix.$t != ''){

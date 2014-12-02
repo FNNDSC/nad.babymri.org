@@ -10,7 +10,7 @@
             <template if="{{(research == null) && (cache == null)}}">
               <span class="spinner"><img src="../../images/spinner.gif"></span>
             </template>
-            <span class="small">We have offices in 3 different </span>
+            <span class="small">We have offices in 6 different </span>
             <span class="large">locations</span>
       </div>
       </div>
@@ -38,253 +38,151 @@
       <div class="">
         <div class="col-md-12 col-lg-12">
         <div class="fBox">
+        
+	<section id='contact' class="element">
+          <div class='row card'>
 
-        <section id="bch" class="element">
+		  <div class="title">Contacts</div>
+		  <div id="ashley" class='info address'>
+		    <div id='ashley-name'></div>
+		    <div id='ashley-phone' class='icon phone'></div>
+		    <div id='ashley-email' class='icon fax'></div>
+		  </div>
+		  <div id="sarah" class='info address'>
+		    <div id='sarah-name'></div>
+		    <div id='sarah-phone' class='icon phone'></div>
+		    <div id='sarah-email' class='icon fax'></div>
+		  </div>
+	</section>
+
+	<section id="locations" class="element">
 
           <div class='row card'>
 
-          <div class="title">Boston Children's Hospital</div>
+            <div class="title">Locations</div>
 
-          <template if="{{contact != null}}">
-            <template repeat="{{location in contact.feed.entry}}">
-              <template if="{{location.gsx$location.$t === 'bch'}}">
+            <div class='subsection'>Boston Children's Hospital</div>
+            <template if="{{contact != null}}">
+              <template repeat="{{location in contact.feed.entry}}">
+                <template if="{{location.gsx$location.$t === 'bch'}}">
+                  <div class="info">
 
-                <div class="info">
+                    <div class='address'>
+                      <div>{{location.gsx$name.$t}}</div>
+                      <div>{{location.gsx$address.$t}}</div>
+                      <div>{{location.gsx$city.$t}}, {{location.gsx$state.$t}} {{location.gsx$zip.$t}}</div>
+                    </div>
 
-                  <div class='address'>
-                    <div>{{location.gsx$name.$t}}</div>
-                    <div>{{location.gsx$address.$t}}</div>
-                    <div>{{location.gsx$city.$t}}, {{location.gsx$state.$t}} {{location.gsx$zip.$t}}</div>
-                  </div>
-
-                  <div class="icon phone">
-                    <span style="padding-left:5px;">{{location.gsx$phone.$t}}</span>
-                  </div>
-                  <div class="icon fax">
-                    <span style="padding-left:5px;">{{location.gsx$fax.$t}}</span>
-                  </div>
-                 </div>
+                   </div>
+                </template>
               </template>
             </template>
-          </template>
-          <div class="map">
-            <div id="bch-map"></div>
-          </div>
-
-          <div id='bch-allnotes'>
-            <div class="notes">
-              <div>Notes</div>
-              <div id='bch-notes'></div>
+            <div class="map">
+              <div id="bch-map"></div>
             </div>
-          </div>
+
+            <div class='subsection'>South Shore Hospital Hospital</div>
+            <template if="{{contact != null}}">
+              <template repeat="{{location in contact.feed.entry}}">
+                <template if="{{location.gsx$location.$t === 'ssh'}}">
+                  <div class="info">
+
+                    <div class='address'>
+                      <div>{{location.gsx$name.$t}}</div>
+                      <div>{{location.gsx$address.$t}}</div>
+                      <div>{{location.gsx$city.$t}}, {{location.gsx$state.$t}} {{location.gsx$zip.$t}}</div>
+                    </div>
+
+                   </div>
+                </template>
+              </template>
+            </template>
+            <div class="map">
+              <div id="ssh-map"></div>
+            </div>
+
+            <div class='subsection'>St. Elizabeth's Medical Center</div>
+            <template if="{{contact != null}}">
+              <template repeat="{{location in contact.feed.entry}}">
+                <template if="{{location.gsx$location.$t === 'semc'}}">
+                  <div class="info">
+
+                    <div class='address'>
+                      <div>{{location.gsx$name.$t}}</div>
+                      <div>{{location.gsx$address.$t}}</div>
+                      <div>{{location.gsx$city.$t}}, {{location.gsx$state.$t}} {{location.gsx$zip.$t}}</div>
+                    </div>
+
+                   </div>
+                </template>
+              </template>
+            </template>
+            <div class="map">
+              <div id="semc-map"></div>
+            </div>
+
+            <div class='subsection'>Beverly Hospital</div>
+            <template if="{{contact != null}}">
+              <template repeat="{{location in contact.feed.entry}}">
+                <template if="{{location.gsx$location.$t === 'bh'}}">
+                  <div class="info">
+
+                    <div class='address'>
+                      <div>{{location.gsx$name.$t}}</div>
+                      <div>{{location.gsx$address.$t}}</div>
+                      <div>{{location.gsx$city.$t}}, {{location.gsx$state.$t}} {{location.gsx$zip.$t}}</div>
+                    </div>
+
+                   </div>
+                </template>
+              </template>
+            </template>
+            <div class="map">
+              <div id="bh-map"></div>
+            </div>
+
+            <div class='subsection'>Winchester Hospital</div>
+            <template if="{{contact != null}}">
+              <template repeat="{{location in contact.feed.entry}}">
+                <template if="{{location.gsx$location.$t === 'wh'}}">
+                  <div class="info">
+
+                    <div class='address'>
+                      <div>{{location.gsx$name.$t}}</div>
+                      <div>{{location.gsx$address.$t}}</div>
+                      <div>{{location.gsx$city.$t}}, {{location.gsx$state.$t}} {{location.gsx$zip.$t}}</div>
+                    </div>
+
+                   </div>
+                </template>
+              </template>
+            </template>
+            <div class="map">
+              <div id="wh-map"></div>
+            </div>
+
+	    <div class='subsection'>Holy Family/Good Sam</div>
+            <template if="{{contact != null}}">
+              <template repeat="{{location in contact.feed.entry}}">
+                <template if="{{location.gsx$location.$t === 'hf'}}">
+                  <div class="info">
+
+                    <div class='address'>
+                      <div>{{location.gsx$name.$t}}</div>
+                      <div>{{location.gsx$address.$t}}</div>
+                      <div>{{location.gsx$city.$t}}, {{location.gsx$state.$t}} {{location.gsx$zip.$t}}</div>
+                    </div>
+
+                   </div>
+                </template>
+              </template>
+            </template>
+            <div class="map">
+              <div id="hf-map"></div>
+            </div>
 
         </div>
         </section>
-
-        <section id="ssh" class="element">
-
-          <div class='row card'>
-
-          <div class="title">South Shore Hospital</div>
-
-          <template if="{{contact != null}}">
-            <template repeat="{{location in contact.feed.entry}}">
-              <template if="{{location.gsx$location.$t === 'ssh'}}">
-                <div  class="info">
-
-                  <div class='address'>
-                    <div>{{location.gsx$name.$t}}</div>
-                    <div>{{location.gsx$address.$t}}</div>
-                    <div>{{location.gsx$city.$t}}, {{location.gsx$state.$t}} {{location.gsx$zip.$t}}</div>
-                  </div>
-
-                  <div class="icon phone">
-                    <span style="padding-left:5px;">{{location.gsx$phone.$t}}</span>
-                  </div>
-                  <div class="icon fax">
-                    <span style="padding-left:5px;">{{location.gsx$fax.$t}}</span>
-                  </div>
-                </div>
-              </template>
-            </template>
-          </template>
-          <div class="map">
-            <div id="ssh-map"></div>
-          </div>
-
-          <div id='ssh-allnotes'>
-            <div class="notes">
-              <div>Notes</div>
-              <div id='ssh-notes'></div>
-            </div>
-          </div>
-
-        </div>
-
-
-        </section>
-        <section id="semc" class="element">
-
-          <div class='row card'>
-
-          <div class="title">St. Elizabeth's Medical Center</div>
-
-          <template if="{{contact != null}}">
-            <template repeat="{{location in contact.feed.entry}}">
-              <template if="{{location.gsx$location.$t === 'semc'}}">
-                <div  class="info">
-
-                  <div class='address'>
-                    <div>{{location.gsx$name.$t}}</div>
-                    <div>{{location.gsx$address.$t}}</div>
-                    <div>{{location.gsx$city.$t}}, {{location.gsx$state.$t}} {{location.gsx$zip.$t}}</div>
-                  </div>
-
-                  <div class="icon phone">
-                    <span style="padding-left:5px;">{{location.gsx$phone.$t}}</span>
-                  </div>
-                  <div class="icon fax">
-                    <span style="padding-left:5px;">{{location.gsx$fax.$t}}</span>
-                  </div>
-                </div>
-              </template>
-            </template>
-          </template>
-          <div class="map">
-            <div id="semc-map"></div>
-          </div>
-
-          <div id='semc-allnotes'>
-            <div class="notes">
-              <div>Notes</div>
-              <div id='semc-notes'></div>
-            </div>
-          </div>
-
-        </div>
-
-
-        <section id="bh" class="element">
-
-          <div class='row card'>
-
-          <div class="title">Beverly Hospital</div>
-
-          <template if="{{contact != null}}">
-            <template repeat="{{location in contact.feed.entry}}">
-              <template if="{{location.gsx$location.$t === 'bh'}}">
-                <div  class="info">
-
-                  <div class='address'>
-                    <div>{{location.gsx$name.$t}}</div>
-                    <div>{{location.gsx$address.$t}}</div>
-                    <div>{{location.gsx$city.$t}}, {{location.gsx$state.$t}} {{location.gsx$zip.$t}}</div>
-                  </div>
-
-                  <div class="icon phone">
-                    <span style="padding-left:5px;">{{location.gsx$phone.$t}}</span>
-                  </div>
-                  <div class="icon fax">
-                    <span style="padding-left:5px;">{{location.gsx$fax.$t}}</span>
-                  </div>
-                </div>
-              </template>
-            </template>
-          </template>
-          <div class="map">
-            <div id="bh-map"></div>
-          </div>
-
-          <div id='bh-allnotes'>
-            <div class="notes">
-              <div>Notes</div>
-              <div id='bh-notes'></div>
-            </div>
-          </div>
-
-        </div>
-
-
-        <section id="wh" class="element">
-
-          <div class='row card'>
-
-          <div class="title">Winchester Hospital</div>
-
-          <template if="{{contact != null}}">
-            <template repeat="{{location in contact.feed.entry}}">
-              <template if="{{location.gsx$location.$t === 'wh'}}">
-                <div  class="info">
-
-                  <div class='address'>
-                    <div>{{location.gsx$name.$t}}</div>
-                    <div>{{location.gsx$address.$t}}</div>
-                    <div>{{location.gsx$city.$t}}, {{location.gsx$state.$t}} {{location.gsx$zip.$t}}</div>
-                  </div>
-
-                  <div class="icon phone">
-                    <span style="padding-left:5px;">{{location.gsx$phone.$t}}</span>
-                  </div>
-                  <div class="icon fax">
-                    <span style="padding-left:5px;">{{location.gsx$fax.$t}}</span>
-                  </div>
-                </div>
-              </template>
-            </template>
-          </template>
-          <div class="map">
-            <div id="wh-map"></div>
-          </div>
-
-          <div id='wh-allnotes'>
-            <div class="notes">
-              <div>Notes</div>
-              <div id='wh-notes'></div>
-            </div>
-          </div>
-
-        </div>
-
-
-        <section id="hf" class="element">
-
-          <div class='row card'>
-
-          <div class="title">Holy Family/Good Sam</div>
-
-          <template if="{{contact != null}}">
-            <template repeat="{{location in contact.feed.entry}}">
-              <template if="{{location.gsx$location.$t === 'hf'}}">
-                <div  class="info">
-
-                  <div class='address'>
-                    <div>{{location.gsx$name.$t}}</div>
-                    <div>{{location.gsx$address.$t}}</div>
-                    <div>{{location.gsx$city.$t}}, {{location.gsx$state.$t}} {{location.gsx$zip.$t}}</div>
-                  </div>
-
-                  <div class="icon phone">
-                    <span style="padding-left:5px;">{{location.gsx$phone.$t}}</span>
-                  </div>
-                  <div class="icon fax">
-                    <span style="padding-left:5px;">{{location.gsx$fax.$t}}</span>
-                  </div>
-                </div>
-              </template>
-            </template>
-          </template>
-          <div class="map">
-            <div id="hf-map"></div>
-          </div>
-
-          <div id='hf-allnotes'>
-            <div class="notes">
-              <div>Notes</div>
-              <div id='hf-notes'></div>
-            </div>
-          </div>
-
-        </div>
 
     </div>
     </div>
@@ -313,16 +211,15 @@
       contactChanged: function(){
         if(this.contact){
             var len = this.contact.feed.entry.length;
-            while (len--) {
-
-              if(this.contact.feed.entry[len].gsx$notes.$t == ''){
-                this.$[this.contact.feed.entry[len].gsx$location.$t+'-allnotes'].innerHTML = this.contact.feed.entry[len].gsx$notes.$t;
-              }
-              else{
-                this.$[this.contact.feed.entry[len].gsx$location.$t+'-notes'].innerHTML = this.contact.feed.entry[len].gsx$notes.$t;
-              }
-
-	      this.$[this.contact.feed.entry[len].gsx$location.$t+'-map'].innerHTML = this.contact.feed.entry[len].gsx$map.$t;
+	    while (len--) {
+	      if( this.contact.feed.entry[len].gsx$map.$t != ''){
+	        this.$[this.contact.feed.entry[len].gsx$location.$t+'-map'].innerHTML = this.contact.feed.entry[len].gsx$map.$t;
+	      }
+	      if( this.contact.feed.entry[len].gsx$group.$t == 'contact'){
+	        this.$[this.contact.feed.entry[len].gsx$location.$t+'-name'].innerHTML = this.contact.feed.entry[len].gsx$name.$t;
+	        this.$[this.contact.feed.entry[len].gsx$location.$t+'-phone'].innerHTML = '  ' +  this.contact.feed.entry[len].gsx$phone.$t;
+	        this.$[this.contact.feed.entry[len].gsx$location.$t+'-email'].innerHTML = '  ' + this.contact.feed.entry[len].gsx$email.$t;
+	      }
             }
 
             this.cache = this.contact;

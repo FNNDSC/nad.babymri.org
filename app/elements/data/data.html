@@ -70,8 +70,9 @@
             <section id="mission" class="element">
 	    <div class="row card">
                 <div class="title">Our mission</div>
-		<div> Describe our mission?</div>
-		<div>Link to form and instruction?</div>
+		<div id='p1' class='missionP'></div>
+		<div id='p2' class='missionP'></div>
+		<div id='p3' class='missionP'></div>
 	    </div>
 	    </section>
 
@@ -119,7 +120,7 @@
   <script>
     Polymer('data-element', {
       name: 'data',
-      spreadsheet: '17hzI6ntmYJ44_Q_5K_sNaJK_JkcO9hY4wq8VBl6bNRs',
+      spreadsheet: '1LqOvb-K92KIy6e8WtJaRxzQZCixbHChga-DLdWje5bY',
       cdn: 'https://googledrive.com/host/0B5vN-2WhAQb9WEl0Qko0SDEyR2c/',
       data: null,
       attached: function(){
@@ -192,15 +193,20 @@
         if(this.data){
           
           for(var i = 0; i < this.data.feed.entry.length; i++){
-	  
-      if(this.data.feed.entry[i].gsx$section.$t == 'schedule'){
-          this.$.calendar.innerHTML = this.data.feed.entry[i].gsx$group.$t;
-	  } 
-            
-		  // handle members
-		  if(this.data.feed.entry[i].gsx$section.$t == 'member'){	  
 
-		  // generate title if no title
+            
+            if(this.data.feed.entry[i].gsx$section.$t == 'schedule'){
+              this.$.calendar.innerHTML = this.data.feed.entry[i].gsx$group.$t;
+	    } 
+
+	    if(this.data.feed.entry[i].gsx$section.$t == 'mission'){
+	      this.$[this.data.feed.entry[i].gsx$group.$t].innerHTML = this.data.feed.entry[i].gsx$hospital.$t;
+	    } 
+
+	    // handle members
+	    if(this.data.feed.entry[i].gsx$section.$t == 'member'){	   
+
+	    // generate title if no title
             if(!this.data.feed.entry[i].gsx$title){
               this.data.feed.entry[i].gsx$title = {$t:''};
               this.data.feed.entry[i].gsx$title.$t = this.data.feed.entry[i].gsx$firstname.$t + ' ' + this.data.feed.entry[i].gsx$middlename.$t + ' ' + this.data.feed.entry[i].gsx$lastname.$t;
@@ -232,11 +238,10 @@
               this.data.feed.entry[i].gsx$l4 = {$t:''};
               this.data.feed.entry[i].gsx$l4.$t = this.data.feed.entry[i].gsx$hospital.$t;
              }
-      }
+          }
 
 
           }
-         window.console.log(this.data); 
           // cache it
           this.cache = this.data;
         }

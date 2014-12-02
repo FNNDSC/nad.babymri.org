@@ -23,22 +23,22 @@
     <home-element structure="{{home}}" scrool="{{scrollTopC}}"></home-element>
   </template>
   <template if="{{route == 'communication-element'}}">
-    <communication-element structure="{{communication}}" scrool="{{scrollTopC}}"></communication-element>
+    <communication-element structure="{{communication}}" scrool="{{scrollTopC}}" cache="{{communicationC}}"></communication-element>
   </template>
   <template if="{{route == 'clinical-element'}}">
-    <clinical-element structure="{{clinical}}" scrool="{{scrollTopC}}"></clinical-element>
+    <clinical-element structure="{{clinical}}" scrool="{{scrollTopC}}" cache="{{clinicalC}}"></clinical-element>
   </template>
   <template if="{{route == 'quality-element'}}">
-    <quality-element structure="{{quality}}" scrool="{{scrollTopC}}"></quality-element>
+    <quality-element structure="{{quality}}" scrool="{{scrollTopC}}" cache="{{qualityC}}"></quality-element>
   </template>
   <template if="{{route == 'discovery-element'}}">
-    <discovery-element structure="{{discovery}}" scrool="{{scrollTopC}}"></discovery-element>
+    <discovery-element structure="{{discovery}}" scrool="{{scrollTopC}}" cache="{{discoveryC}}"></discovery-element>
   </template>
   <template if="{{route == 'teaching-element'}}">
-    <teaching-element structure="{{teaching}}" scrool="{{scrollTopC}}"></teaching-element>
+    <teaching-element structure="{{teaching}}" scrool="{{scrollTopC}}" cache="{{teachingC}}"></teaching-element>
   </template>
   <template if="{{route == 'data-element'}}">
-    <data-element structure="{{data}}" scrool="{{scrollTopC}}"></data-element>
+  <data-element structure="{{data}}" scrool="{{scrollTopC}}" cache="{{dataC}}"></data-element>
   </template>
   <template if="{{route == 'contact-element'}}">
     <contact-element structure="{{contact}}" scrool="{{scrollTopC}}" cache="{{contactC}}"></contact-element>
@@ -78,13 +78,8 @@
 	this.data = this.communication;
 
         // contact page
-        this.contact = [{id:'bch', label:'Boston Children\'s Hospital', index:0},
-                     {id:'ssh', label:'South Shore Hospital', index:1},
-                     {id:'semc', label:'St. Elizabeth\'s Medical Center', index:2},
-                     {id:'bh', label:'Beverly Hospital', index:3},
-                     {id:'wh', label:'Winchester Hospital', index:4},
-                     {id:'hf', label:'Holy Familiy\/Good Sam', index:5}];
-
+        this.contact = [{id:'contact', label:'contact', index:0},
+                        {id:'locations', label:'locations', index:1}];
 
       },
       refresh: function(){
