@@ -39,59 +39,48 @@ module.exports = function (grunt) {
                 files: '<%= yeoman.app %>/elements/home/home.scss',
                 tasks: ['compass:home']
             },
-
-            compassResearch: {
-                files: '<%= yeoman.app %>/elements/research/research.scss',
-                tasks: ['compass:research']
+            compassCommunication: {
+                files: '<%= yeoman.app %>/elements/communication/communication.scss',
+                tasks: ['compass:communication']
             },
-
-            compassSoftware: {
-                files: '<%= yeoman.app %>/elements/software/software.scss',
-                tasks: ['compass:software']
+            compassClinical: {
+                files: '<%= yeoman.app %>/elements/clinical/clinical.scss',
+                tasks: ['compass:clinical']
             },
-
-            compassHighlights: {
-                files: '<%= yeoman.app %>/elements/highlights/highlights.scss',
-                tasks: ['compass:highlights']
+            compassQuality: {
+                files: '<%= yeoman.app %>/elements/quality/quality.scss',
+                tasks: ['compass:quality']
             },
-            compassHighlightsCard: {
-                files: '<%= yeoman.app %>/elements/highlights_card/highlights_card.scss',
-                tasks: ['compass:highlights_card']
+            compassDiscovery: {
+                files: '<%= yeoman.app %>/elements/discovery/discovery.scss',
+                tasks: ['compass:discovery']
             },
-
-            compassTeam: {
-                files: '<%= yeoman.app %>/elements/team/team.scss',
-                tasks: ['compass:team']
+            compassTeaching: {
+                files: '<%= yeoman.app %>/elements/teaching/teaching.scss',
+                tasks: ['compass:teaching']
             },
-
+            compassData: {
+                files: '<%= yeoman.app %>/elements/data/data.scss',
+                tasks: ['compass:data']
+            },
             compassPeople: {
                 files: '<%= yeoman.app %>/elements/people/people.scss',
                 tasks: ['compass:people']
             },
-
-compassContact: {
-    files: '<%= yeoman.app %>/elements/contact/contact.scss',
-    tasks: ['compass:contact']
-},
-
-compassLive: {
-    files: '<%= yeoman.app %>/elements/live/live.scss',
-    tasks: ['compass:live']
-},
-
-compassEvent: {
-    files: '<%= yeoman.app %>/elements/event/event.scss',
-    tasks: ['compass:event']
-},
-
+            compassContact: {
+                files: '<%= yeoman.app %>/elements/contact/contact.scss',
+                tasks: ['compass:contact']
+            },
             compassPages: {
                 files: '<%= yeoman.app %>/elements/page/page.scss',
                 tasks: ['compass:home',
-                        'compass:research',
-                        'compass:software',
-                        'compass:highlights']
+			'compass:communication',
+			'compass:clinical',
+			'compass:quality',
+			'compass:discovery',
+			'compass:teaching',
+			'compass:data']
             },
-
             livereload: {
                 options: {
                     livereload: LIVERELOAD_PORT
@@ -185,28 +174,40 @@ compassEvent: {
                   cssDir: '.tmp/elements/home',
               }
             },
-            research:{
+            communication:{
               options: {
-                  sassDir: '<%= yeoman.app %>/elements/research',
-                  cssDir: '.tmp/elements/research',
+                  sassDir: '<%= yeoman.app %>/elements/communication',
+                  cssDir: '.tmp/elements/communication',
               }
             },
-            software:{
+            clinical:{
               options: {
-                  sassDir: '<%= yeoman.app %>/elements/software',
-                  cssDir: '.tmp/elements/software',
+                  sassDir: '<%= yeoman.app %>/elements/clinical',
+                  cssDir: '.tmp/elements/clinical',
               }
             },
-            highlights:{
+            quality:{
               options: {
-                  sassDir: '<%= yeoman.app %>/elements/highlights',
-                  cssDir: '.tmp/elements/highlights',
+                  sassDir: '<%= yeoman.app %>/elements/quality',
+                  cssDir: '.tmp/elements/quality',
               }
             },
-            highlights_card:{
+            discovery:{
               options: {
-                  sassDir: '<%= yeoman.app %>/elements/highlights_card',
-                  cssDir: '.tmp/elements/highlights_card',
+                  sassDir: '<%= yeoman.app %>/elements/discovery',
+                  cssDir: '.tmp/elements/discovery',
+              }
+            },
+            teaching:{
+              options: {
+                  sassDir: '<%= yeoman.app %>/elements/teaching',
+                  cssDir: '.tmp/elements/teaching',
+              }
+            },
+            data:{
+              options: {
+                  sassDir: '<%= yeoman.app %>/elements/data',
+                  cssDir: '.tmp/elements/data',
               }
             },
             contact:{
@@ -215,28 +216,10 @@ compassEvent: {
                   cssDir: '.tmp/elements/contact',
               }
             },
-            team:{
-              options: {
-                  sassDir: '<%= yeoman.app %>/elements/team',
-                  cssDir: '.tmp/elements/team',
-              }
-            },
             people:{
               options: {
                   sassDir: '<%= yeoman.app %>/elements/people',
                   cssDir: '.tmp/elements/people',
-              }
-            },
-            live:{
-              options: {
-                  sassDir: '<%= yeoman.app %>/elements/live',
-                  cssDir: '.tmp/elements/live',
-              }
-            },
-            event:{
-              options: {
-                  sassDir: '<%= yeoman.app %>/elements/event',
-                  cssDir: '.tmp/elements/event',
               }
             }
         },
@@ -278,29 +261,34 @@ compassEvent: {
                     '<%= yeoman.dist %>/elements/home/home.css': '.tmp/elements/home/home.css'
                 }
             },
-            research: {
+            communication: {
                 files: {
-                    '<%= yeoman.dist %>/elements/research/research.css': '.tmp/elements/research/research.css'
+                    '<%= yeoman.dist %>/elements/communication/communication.css': '.tmp/elements/communication/communication.css'
                 }
             },
-            highlights: {
+            clinical: {
                 files: {
-                    '<%= yeoman.dist %>/elements/highlights/highlights.css': '.tmp/elements/highlights/highlights.css'
+                    '<%= yeoman.dist %>/elements/clinical/clinical.css': '.tmp/elements/clinical/clinical.css'
                 }
             },
-            highlights_card: {
+            quality: {
                 files: {
-                    '<%= yeoman.dist %>/elements/highlights_card/highlights_card.css': '.tmp/elements/highlights_card/highlights_card.css'
+                    '<%= yeoman.dist %>/elements/quality/quality.css': '.tmp/elements/quality/quality.css'
                 }
             },
-            software: {
+            discovery: {
                 files: {
-                    '<%= yeoman.dist %>/elements/software/software.css': '.tmp/elements/software/software.css'
+                    '<%= yeoman.dist %>/elements/discovery/discovery.css': '.tmp/elements/discovery/discovery.css'
                 }
             },
-            team: {
+            teaching: {
                 files: {
-                    '<%= yeoman.dist %>/elements/team/team.css': '.tmp/elements/team/team.css'
+                    '<%= yeoman.dist %>/elements/teaching/teaching.css': '.tmp/elements/teaching/teaching.css'
+                }
+            },
+            data: {
+                files: {
+                    '<%= yeoman.dist %>/elements/data/data.css': '.tmp/elements/data/data.css'
                 }
             },
             people: {
@@ -311,16 +299,6 @@ compassEvent: {
             contact: {
                 files: {
                     '<%= yeoman.dist %>/elements/contact/contact.css': '.tmp/elements/contact/contact.css'
-                }
-            },
-            live: {
-                files: {
-                    '<%= yeoman.dist %>/elements/live/live.css': '.tmp/elements/live/live.css'
-                }
-            },
-            event: {
-                files: {
-                    '<%= yeoman.dist %>/elements/event/event.css': '.tmp/elements/event/event.css'
                 }
             }
         },
@@ -455,15 +433,14 @@ compassEvent: {
             'copy:cssAsScss',
             'compass:server',
             'compass:home',
-            'compass:research',
-            'compass:software',
-            'compass:highlights',
-            'compass:highlights_card',
-            'compass:team',
+            'compass:communication',
+            'compass:clinical',
+            'compass:quality',
+            'compass:discovery',
+            'compass:teaching',
+            'compass:data',
             'compass:people',
             'compass:contact',
-            'compass:live',
-            'compass:event',
             'connect:livereload',
             // 'copy',
             'open',
@@ -485,15 +462,14 @@ compassEvent: {
         // compile css for all pages
         'compass:dist',
         'compass:home',
-        'compass:research',
-        'compass:software',
-        'compass:highlights',
-        'compass:highlights_card',
-        'compass:team',
+        'compass:communication',
+        'compass:clinical',
+        'compass:quality',
+        'compass:discovery',
+        'compass:teaching',
+        'compass:data',
         'compass:people',
         'compass:contact',
-        'compass:live',
-        'compass:event',
         // prepare files (replace <!-- build:js scripts/postload.js --> tags)
         'useminPrepare',
         // prepare images
@@ -508,15 +484,14 @@ compassEvent: {
         // minify css
         'cssmin',
         'cssmin:home',
-        'cssmin:research',
-        'cssmin:highlights',
-        'cssmin:highlights_card',
-        'cssmin:software',
-        'cssmin:team',
+        'cssmin:communication',
+        'cssmin:clinical',
+        'cssmin:quality',
+        'cssmin:discovery',
+        'cssmin:teaching',
+        'cssmin:data',
         'cssmin:people',
         'cssmin:contact',
-        'cssmin:live',
-        'cssmin:event',
         // minify JS
         'uglify',
         // move last files over

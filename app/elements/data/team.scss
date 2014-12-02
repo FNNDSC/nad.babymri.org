@@ -1,15 +1,91 @@
 @import '../../styles/main.scss';
 @import '../page/page.scss';
 
-paper-button {
-  margin: .5em;
-  width: 10em;
-  position: absolute;
-  bottom: 0;
-  left:0;
-  text-align:center;
-  color: #353535;
-  border: 1px solid #353535;
+paper-tabs, core-toolbar {
+  background-color: #00bcd4;
+  color: #fff;
+  @include vendor-prefix("box-shadow", "0px 3px 2px rgba(0, 0, 0, 0.2)");
+}
+
+core-toolbar paper-tabs {
+  box-shadow: none;
+}
+
+paper-dialog content div{
+  padding-top:15px;
+  padding-bottom:5px;
+}
+
+paper-tabs[noink][nobar] paper-tab.core-selected {
+  color: #ffff8d;
+}
+
+paper-tabs.transparent-teal {
+  background-color: transparent;
+  color: #00bcd4;
+  @include vendor-prefix("box-shadow", "none");
+}
+
+paper-tabs.transparent-teal::shadow #selectionBar {
+  background-color: #00bcd4;
+}
+
+paper-tabs.transparent-teal paper-tab::shadow #ink {
+  color: #00bcd4;
+}
+
+.label {
+  text-align: left;
+  color: #bbb;
+  font-size: 12px;
+  margin-top: 2em;
+}
+
+@media (min-width: 1000px){
+  paper-dialog{
+    width:50%;
+    min-width:430px;
+    @include transform(translate3d(0,0,0));
+  }
+}
+
+@media (max-width: 999px){
+  paper-dialog{
+    left:0;
+    min-width: calc(100% - 40px);
+    margin-left:20px;
+    @include transform(translate3d(0,0,0));
+  }
+}
+
+$bch-color: #3f51b5;
+#bch .card{
+  border-left: 5px solid $bch-color;
+}
+
+$ssh-color: #259b24;
+#ssh .card{
+  border-left: 5px solid $ssh-color;
+}
+
+$semc-color: #ffc107;
+#semc .card{
+  border-left: 5px solid $semc-color;
+}
+
+$bh-color: #e51c23;
+#bh .card{
+  border-left: 5px solid $bh-color;
+}
+
+$wh-color: #3f51b5;
+#wh .card{
+  border-left: 5px solid $wh-color;
+}
+
+$hf-color: #259b24;
+#hf .card{
+  border-left: 5px solid $hf-color;
 }
 
 /* Buzz Out */
@@ -126,150 +202,4 @@ paper-button:hover, paper-button:focus, paper-button:active {
   animation-timing-function: linear;
   -webkit-animation-iteration-count: 1;
   animation-iteration-count: 1;
-}
-.content {
-  padding: 1em;
-}
-
-.max-lines {
-  text-overflow: ellipsis;
-  word-wrap: break-word;
-  overflow: hidden;
-  max-height: 2.4em;
-  line-height: 1.2em;
-}
-
-.wrapper2 {
-  position: relative;
-  -webkit-box-shadow: #bbb .1em .1em 1em 0em;
-  margin-top: 10px;
-  background-color: #FFF;
-  -webkit-transition-duration: 0.3s;
-  transition-duration: 0.3s;
-  -webkit-transition-property: box-shadow;
-  transition-property: box-shadow;
-  -webkit-transform: translateZ(0);
-  transform: translateZ(0);
-}
-
-.wrapper2:hover, .wrapper2:focus, .wrapper2:active{
-  -webkit-box-shadow: #888 .1em .1em 1em 0em;
-}
-
-#contactInfo{
-  position: absolute;
-  top: -1px;
-  right: -1px;
-}
-
-.selected{
-  background-color: rgb(0, 136, 204);
-  color:white;
-}
-
-.contact{
-  color:rgb(0, 136, 204)!important;
-}
-span{
-  display: inline-block!important;
-}
-.department{
-  font-variant: small-caps;
-}
-
-$general-color: #0eadee;
-$press-color: #31b06b;
-$publication-color: #f55253;
-$award-color: #259b24;
-$talk-color: #5158cc;
-
-@each $category, $color in (general,$general-color), (press, $press-color), (publication, $publication-color), (award,$award-color), (talk, $talk-color) {
-  .name.#{$category} {
-    background-color:#{$color};
-  }
-  .border.#{$category} {
-    border:1px solid #{$color};
-  }
-
-  // .testme:hover .#{$category}.wrapper2{
-  //   background-color:#{$color};
-  //   color:#fff;
-  // }
-}
-
-.name{
-  text-align:center;
-  color:#FFF;
-}
-
-.name > h1{
-  display: block;
-  padding: 5px;
-  margin: 0 !important;
-  font-size: 1.2em;
-  font-family: 'Open Sans', sans-serif;
-  font-weight: normal;
-}
-
-#picture{
-  width:50px;
-  height:135px;
-  float:right;
-  padding:5px;
-  -webkit-transition-duration: 0.3s;
-  transition-duration: 0.3s;
-  -webkit-transition-property: width;
-  transition-property: width;
-  -webkit-transform: translateZ(0);
-  transform: translateZ(0);
-}
-
-#calendar{
-  border: 1px solid #ddd;
-}
-
-#info{
-  padding:5px;
-  color: #353535;
-  display:none;
-}
-
-.date{
-  font-weight: bold;
-  text-align: center;
-  font-size: x-large;
-  width: 100%;
-  margin-top:-1px;
-
-}
-
-.month{
-  font-weight: bold;
-  text-align: center;
-  text-transform: uppercase;
-  width: 100%;
-}
-.month span{
-  width:100%;
-}
-.testme{
-  height:175px;
-}
-
-.testme:hover .mainHover{
-display : none;
-}
-
-.testme:hover #info{
-display : block;
-}
-
-.testme:hover #picture{
-width:110px;
-}
-
-.mainHover{
-  font-size:1em;
-  padding:5px;
-  display:block;
 }

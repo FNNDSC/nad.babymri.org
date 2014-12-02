@@ -52,7 +52,18 @@ section {
   margin-top: 25px;
 }
 
+#navnav{
+  width:100%;
+  background-color: #eee;
+  color: #353535;
+}
+
+
 @media (min-width: 1000px){
+  #navnav, #navnavContainer{
+    height:50px;
+  }
+
   .jumbotron .small{
     display: block;
     font-style: italic;
@@ -92,6 +103,14 @@ section {
   .jumbotron .large{
     font-size: 20px;
   }
+
+  div .shady{
+    position:inherit;
+  }
+
+  .navbar-nav{
+    margin:auto;
+  }
 }
 
 .spinner{
@@ -114,16 +133,6 @@ section {
   font-size:1.3em;
 }
 
-#navnav{
-  width:100%;
-  height:50px;
-  background-color: #eee;
-  color: #353535;
-}
-
-#navnavContainer{
-  height:50px;
-}
 
 .nav > li > a:hover {
   color: #353535;
@@ -138,4 +147,14 @@ section {
 .nav > li > a.active{
   background-color:#fff;
   color:#353535;
+}
+
+.subsection {
+  font-size: 1.5em;
+  padding: .2em;
+}
+
+.missionP{
+  padding-bottom: 2em;
+  font-size: 1.2em;
 }
