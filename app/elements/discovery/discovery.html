@@ -78,19 +78,93 @@
 
             <section id="members" class="element">
 
-
               <div class="row card">
 
-                <div class="title">Members</div>
-                <template if="{{discovery != null}}">
-                  <template repeat="{{people in discovery.feed.entry}}">
-		  <template if="{{people.gsx$section.$t === 'member'}}">
-		  <card-element cardObject="{{people}}" cardLoaded="{{peopleLoaded}}" cardSelected="{{peopleSelected}}"></card-element>
-                    </template>
-                  </template>
-                </template>
-      </div>
-            </section>
+		      <div class="title">Members</div>
+                
+		      <div class='subsection'>Boston Children's Hospital</div>
+		      <div class='row'>
+		      <template if="{{discovery != null}}">
+		      <template repeat="{{people in discovery.feed.entry}}">
+		      <template if="{{people.gsx$section.$t === 'member'}}">
+		      <template if="{{people.gsx$group.$t === 'bch'}}">
+		      <card-element cardObject="{{people}}" cardLoaded="{{peopleLoaded}}" cardSelected="{{peopleSelected}}"></card-element>
+		      </template>
+		      </template>
+		      </template>
+		      </template>
+	              </div>
+	   
+		      <div class='subsection'>South Shore Hospital</div>
+		      <div class='row'>
+		      <template if="{{discovery != null}}">
+		      <template repeat="{{people in discovery.feed.entry}}">
+		      <template if="{{people.gsx$section.$t === 'member'}}">
+		      <template if="{{people.gsx$group.$t === 'ssh'}}">
+		      <card-element cardObject="{{people}}" cardLoaded="{{peopleLoaded}}" cardSelected="{{peopleSelected}}"></card-element>
+		      </template>
+		      </template>
+		      </template>
+                      </template>
+	              </div>
+	   
+		      <div class='subsection'>St. Elizabeth's Medical Center</div>
+		      <div class='row'>
+		      <template if="{{discovery != null}}">
+		      <template repeat="{{people in discovery.feed.entry}}">
+		      <template if="{{people.gsx$section.$t === 'member'}}">
+		      <template if="{{people.gsx$group.$t === 'semc'}}">
+		      <card-element cardObject="{{people}}" cardLoaded="{{peopleLoaded}}" cardSelected="{{peopleSelected}}"></card-element>
+		      </template>
+		      </template>
+		      </template>
+                      </template>
+	              </div>
+	   
+		      <div class='subsection'>Beverly Hospital</div>
+		      <div class='row'>
+		      <template if="{{discovery != null}}">
+		      <template repeat="{{people in discovery.feed.entry}}">
+		      <template if="{{people.gsx$section.$t === 'member'}}">
+		      <template if="{{people.gsx$group.$t === 'bh'}}">
+		      <card-element cardObject="{{people}}" cardLoaded="{{peopleLoaded}}" cardSelected="{{peopleSelected}}"></card-element>
+		      </template>
+		      </template>
+		      </template>
+                      </template>
+	              </div>
+	   
+		      <div class='subsection'>Winchester Hospital</div>
+		      <div class='row'>
+		      <template if="{{discovery != null}}">
+		      <template repeat="{{people in discovery.feed.entry}}">
+		      <template if="{{people.gsx$section.$t === 'member'}}">
+		      <template if="{{people.gsx$group.$t === 'wh'}}">
+		      <card-element cardObject="{{people}}" cardLoaded="{{peopleLoaded}}" cardSelected="{{peopleSelected}}"></card-element>
+		      </template>
+		      </template>
+		      </template>
+                      </template>
+	              </div>
+	   
+		      <div class='subsection'>Holy Family/Good Sam</div>
+		      <div class='row'>
+		      <template if="{{discovery != null}}">
+		      <template repeat="{{people in discovery.feed.entry}}">
+		      <template if="{{people.gsx$section.$t === 'member'}}">
+		      <template if="{{people.gsx$group.$t === 'hf'}}">
+		      <card-element cardObject="{{people}}" cardLoaded="{{peopleLoaded}}" cardSelected="{{peopleSelected}}"></card-element>
+		      </template>
+		      </template>
+		      </template>
+                      </template>
+	              </div>
+	   
+	      </div>
+  
+	      </section>
+
+	    <section id="schedule" class="element">
 
 	    <section id="schedule" class="element">
 	    <div class="row card">
