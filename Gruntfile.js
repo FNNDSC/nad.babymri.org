@@ -406,6 +406,8 @@ module.exports = function (grunt) {
                         "core-meta/**",
                         "core-toolbar/**",
                         "core-selector/**",
+                        "core-animated-pages/**",
+                        "core-style/**",
                         "core-selection/**",
                         'polymer-jsonp/**'
                     ]

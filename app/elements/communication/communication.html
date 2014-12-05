@@ -5,7 +5,10 @@
 <link rel="import" href="../../lib-elements/paper-dialog/paper-dialog-transition.html">
 <link rel="import" href="../../lib-elements/paper-dialog/paper-dialog.html">
 <link rel="import" href="../../lib-elements/core-selector/core-selector.html">
+<link rel="import" href="../../lib-elements/core-animated-pages/core-animated-pages.html">
 <link rel="import" href="../../lib-elements/paper-tabs/paper-tabs.html">
+
+<link rel="import" href="../chip/chip.html">
 
 <polymer-element name="communication-element" extends="page-element">
   <template>
@@ -44,7 +47,8 @@
     </div>
 
     <!-- Paper Dialog -->
-    <paper-dialog heading="More about" transition="paper-dialog-transition-center" tabindex="-1" class="{{people.gsx$lastname.$t}} paper-dialog-transition paper-dialog-transition-center" style="z-index: 2000; position: fixed; display: none;">
+  
+  <paper-dialog heading="More about" transition="paper-dialog-transition-center" tabindex="-1" class="{{people.gsx$lastname.$t}} paper-dialog-transition paper-dialog-transition-center" style="z-index: 2000; position: fixed; display: none;">
       <content>
 
         <paper-tabs selected="0" class="transparent-teal" noink>
@@ -63,13 +67,15 @@
 
     </paper-dialog>
 
+
     <!-- Page Content -->
     <div class="container">
         <div class="col-md-12 col-lg-12">
           <div class="fBox">
             <section id="mission" class="element">
 	    <div class="row card">
-                <div class="title">Our mission</div>
+		    <music-demo></music-demo>    
+		    <div class="title">Our mission</div>
 		<div id='mission_p1' class='missionP'></div>
 		<div id='mission_p2' class='missionP'></div>
 		<div id='mission_p3' class='missionP'></div>
