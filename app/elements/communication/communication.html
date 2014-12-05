@@ -70,9 +70,9 @@
             <section id="mission" class="element">
 	    <div class="row card">
                 <div class="title">Our mission</div>
-		<div id='p1' class='missionP'></div>
-		<div id='p2' class='missionP'></div>
-		<div id='p3' class='missionP'></div>
+		<div id='mission_p1' class='missionP'></div>
+		<div id='mission_p2' class='missionP'></div>
+		<div id='mission_p3' class='missionP'></div>
 	    </div>
 	    </section>
 
@@ -176,7 +176,9 @@
 	    <section id="contact" class="element">
 	    <div class="row card">
                 <div class="title">Contact</div>
-		<div>More information <a href='../../../#contact-element'>here</a></div>
+		<div id='contact_p1' class='missionP'></div>
+		<div id='contact_p2' class='missionP'></div>
+		<div id='contact_p3' class='missionP'></div>
 	    </div>
 	    </section>
 
@@ -273,7 +275,11 @@
 	    } 
 
 	    if(this.communication.feed.entry[i].gsx$section.$t == 'mission'){
-	      this.$[this.communication.feed.entry[i].gsx$group.$t].innerHTML = this.communication.feed.entry[i].gsx$hospital.$t;
+	      this.$['mission_' +  this.communication.feed.entry[i].gsx$group.$t].innerHTML = this.communication.feed.entry[i].gsx$hospital.$t;
+	    } 
+
+	    if(this.communication.feed.entry[i].gsx$section.$t == 'contact'){
+	      this.$['contact_' +  this.communication.feed.entry[i].gsx$group.$t].innerHTML = this.communication.feed.entry[i].gsx$hospital.$t;
 	    } 
 	    
 	    // handle members

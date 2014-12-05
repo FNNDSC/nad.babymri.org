@@ -67,28 +67,19 @@
     <div class="container">
         <div class="col-md-12 col-lg-12">
           <div class="fBox">
-            <section id="mission" class="element">
-	    <div class="row card">
-                <div class="title">Our mission</div>
-		<div id='p1' class='missionP'></div>
-		<div id='p2' class='missionP'></div>
-		<div id='p3' class='missionP'></div>
-	    </div>
-	    </section>
-
-
-            <section id="members" class="element">
+      
+	      <section id="respiratory" class="element">
 
               <div class="row card">
 
-		      <div class="title">Members</div>
+		      <div class="title">Respitarory</div>
                 
-		      <div class='subsection'>Boston Children's Hospital</div>
+		      <div class='subsection'>Members</div>
 		      <div class='row'>
 		      <template if="{{clinical != null}}">
 		      <template repeat="{{people in clinical.feed.entry}}">
-		      <template if="{{people.gsx$section.$t === 'member'}}">
-		      <template if="{{people.gsx$group.$t === 'bch'}}">
+		      <template if="{{people.gsx$section.$t === 'respiratory'}}">
+		      <template if="{{people.gsx$subsection.$t === 'member'}}">
 		      <card-element cardObject="{{people}}" cardLoaded="{{peopleLoaded}}" cardSelected="{{peopleSelected}}"></card-element>
 		      </template>
 		      </template>
@@ -96,91 +87,64 @@
 		      </template>
 	              </div>
 	   
-		      <div class='subsection'>South Shore Hospital</div>
-		      <div class='row'>
-		      <template if="{{clinical != null}}">
-		      <template repeat="{{people in clinical.feed.entry}}">
-		      <template if="{{people.gsx$section.$t === 'member'}}">
-		      <template if="{{people.gsx$group.$t === 'ssh'}}">
-		      <card-element cardObject="{{people}}" cardLoaded="{{peopleLoaded}}" cardSelected="{{peopleSelected}}"></card-element>
-		      </template>
-		      </template>
-		      </template>
-                      </template>
-	              </div>
-	   
-		      <div class='subsection'>St. Elizabeth's Medical Center</div>
-		      <div class='row'>
-		      <template if="{{clinical != null}}">
-		      <template repeat="{{people in clinical.feed.entry}}">
-		      <template if="{{people.gsx$section.$t === 'member'}}">
-		      <template if="{{people.gsx$group.$t === 'semc'}}">
-		      <card-element cardObject="{{people}}" cardLoaded="{{peopleLoaded}}" cardSelected="{{peopleSelected}}"></card-element>
-		      </template>
-		      </template>
-		      </template>
-                      </template>
-	              </div>
-	   
-		      <div class='subsection'>Beverly Hospital</div>
-		      <div class='row'>
-		      <template if="{{clinical != null}}">
-		      <template repeat="{{people in clinical.feed.entry}}">
-		      <template if="{{people.gsx$section.$t === 'member'}}">
-		      <template if="{{people.gsx$group.$t === 'bh'}}">
-		      <card-element cardObject="{{people}}" cardLoaded="{{peopleLoaded}}" cardSelected="{{peopleSelected}}"></card-element>
-		      </template>
-		      </template>
-		      </template>
-                      </template>
-	              </div>
-	   
-		      <div class='subsection'>Winchester Hospital</div>
-		      <div class='row'>
-		      <template if="{{clinical != null}}">
-		      <template repeat="{{people in clinical.feed.entry}}">
-		      <template if="{{people.gsx$section.$t === 'member'}}">
-		      <template if="{{people.gsx$group.$t === 'wh'}}">
-		      <card-element cardObject="{{people}}" cardLoaded="{{peopleLoaded}}" cardSelected="{{peopleSelected}}"></card-element>
-		      </template>
-		      </template>
-		      </template>
-                      </template>
-	              </div>
-	   
-		      <div class='subsection'>Holy Family/Good Sam</div>
-		      <div class='row'>
-		      <template if="{{clinical != null}}">
-		      <template repeat="{{people in clinical.feed.entry}}">
-		      <template if="{{people.gsx$section.$t === 'member'}}">
-		      <template if="{{people.gsx$group.$t === 'hf'}}">
-		      <card-element cardObject="{{people}}" cardLoaded="{{peopleLoaded}}" cardSelected="{{peopleSelected}}"></card-element>
-		      </template>
-		      </template>
-		      </template>
-                      </template>
-	              </div>
+		      <div class='subsection'>Current activity</div>
+		      <div id='respiratory_activity_p1' class='missionP'></div>
+		      <div id='respiratory_activity_p2' class='missionP'></div>
+		      <div id='respiratory_activity_p3' class='missionP'></div>
+  
+		      <div class='subsection'>Guidelines</div>
+		      <div id='respiratory_guidelines_p1' class='missionP'></div>
+		      <div id='respiratory_guidelines_p2' class='missionP'></div>
+		      <div id='respiratory_guidelines_p3' class='missionP'></div>
+  
+		      <div class='subsection'>References</div>
+		      <div id='respiratory_references_p1' class='missionP'></div>
+		      <div id='respiratory_references_p2' class='missionP'></div>
+		      <div id='respiratory_references_p3' class='missionP'></div>
 	   
 	      </div>
   
 	      </section>
 
-	    <section id="schedule" class="element">
 
+            <section id="neurology" class="element">
 
-	    <section id="schedule" class="element">
-	    <div class="row card">
-                <div class="title">Schedule</div>
-   <div id='calendar'></div>
-	</div>
-	    </section>
-	    
-	    <section id="contact" class="element">
-	    <div class="row card">
-                <div class="title">Contact</div>
-		<div>More information <a href='../../../#contact-element'>here</a></div>
-	    </div>
-	    </section>
+              <div class="row card">
+
+		      <div class="title">Neurology</div>
+                
+		      <div class='subsection'>Members</div>
+		      <div class='row'>
+		      <template if="{{clinical != null}}">
+		      <template repeat="{{people in clinical.feed.entry}}">
+		      <template if="{{people.gsx$section.$t === 'neurology'}}">
+		      <template if="{{people.gsx$subsection.$t === 'member'}}">
+		      <card-element cardObject="{{people}}" cardLoaded="{{peopleLoaded}}" cardSelected="{{peopleSelected}}"></card-element>
+		      </template>
+		      </template>
+		      </template>
+		      </template>
+	              </div>
+	   
+		      <div class='subsection'>Current activity</div>
+		      <div id='neurology_activity_p1' class='missionP'></div>
+		      <div id='neurology_activity_p2' class='missionP'></div>
+		      <div id='neurology_activity_p3' class='missionP'></div>
+  
+		      <div class='subsection'>Guidelines</div>
+		      <div id='neurology_guidelines_p1' class='missionP'></div>
+		      <div id='neurology_guidelines_p2' class='missionP'></div>
+		      <div id='neurology_guidelines_p3' class='missionP'></div>
+  
+		      <div class='subsection'>References</div>
+		      <div id='neurology_references_p1' class='missionP'></div>
+		      <div id='neurology_references_p2' class='missionP'></div>
+		      <div id='neurology_references_p3' class='missionP'></div>
+	   
+	      </div>
+  
+	      </section>
+
 
     </div>
         </div>
@@ -270,16 +234,12 @@
           
           for(var i = 0; i < this.clinical.feed.entry.length; i++){
 	  
-            if(this.clinical.feed.entry[i].gsx$section.$t == 'schedule'){
-              this.$.calendar.innerHTML = this.clinical.feed.entry[i].gsx$group.$t;
-	    } 
-
-	    if(this.clinical.feed.entry[i].gsx$section.$t == 'mission'){
-	      this.$[this.clinical.feed.entry[i].gsx$group.$t].innerHTML = this.clinical.feed.entry[i].gsx$hospital.$t;
+	    if(this.clinical.feed.entry[i].gsx$type.$t == 'paragraph'){
+	      this.$[this.clinical.feed.entry[i].gsx$section.$t + '_' + this.clinical.feed.entry[i].gsx$subsection.$t + '_' + this.clinical.feed.entry[i].gsx$group.$t].innerHTML = this.clinical.feed.entry[i].gsx$hospital.$t;
 	    } 
             
 	    // handle members
-	    if(this.clinical.feed.entry[i].gsx$section.$t == 'member'){	  
+	    if(this.clinical.feed.entry[i].gsx$type.$t == 'person'){	  
 
 	    // generate title if no title
             if(!this.clinical.feed.entry[i].gsx$title){

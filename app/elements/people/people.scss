@@ -193,12 +193,15 @@ $semc-color: #ffc107;
 $wh-color: #3f51b5;
 $hf-color: #259b24;
 */
-$bch-color: #8BC34A;
-$ssh-color: #8BC34A;
-$bh-color: #8BC34A;
-$semc-color: #8BC34A;
-$wh-color: #8BC34A;
-$hf-color: #8BC34A;
+$respiratory-color: #5C6BC0;
+$neurology-color: #66BB6A;
+
+$bch-color: #66BB6A;
+$ssh-color: #66BB6A;
+$bh-color: #66BB6A;
+$semc-color: #66BB6A;
+$wh-color: #66BB6A;
+$hf-color: #66BB6A;
 
 $general-color: #03a9f4;
 $press-color: #259b24;
@@ -220,6 +223,7 @@ $unix101-color: #ffc107;
 @each $category, $color in (general,$general-color), (press, $press-color),
                            (publication, $publication-color), (award,$award-color),
                            (talk, $talk-color),
+                           (respiratory,$respiratory-color), (neurology, $neurology-color),
                            (bch,$bch-color), (ssh, $ssh-color),
                            (semc, $semc-color), (bh,$bh-color),
                            (wh, $wh-color), (hf,$hf-color),
