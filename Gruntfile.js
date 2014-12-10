@@ -339,7 +339,7 @@ module.exports = function (grunt) {
     preload:{
       head: {
           src: ['<%= yeoman.app %>/bower_components/modernizr/modernizr.js',
-                '<%= yeoman.app %>/bower_components/platform/platform.js'],
+                '<%= yeoman.app %>/bower_components/webcomponentsjs/webcomponents.js'],
           dest: '<%= yeoman.dist %>/scripts/preload.js',
       }
     },

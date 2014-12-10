@@ -68,14 +68,24 @@ $neurology-color: #259b24;
   border-left: 5px solid $neurology-color;
 }
 
-$schedule-color: #ffc107;
-#schedule .card{
-  border-left: 5px solid $schedule-color;
+$perinatal-color: #ffc107;
+#perinatal .card{
+  border-left: 5px solid $perinatal-color;
 }
 
-$contact-color: #e51c23;
-#contact .card{
-  border-left: 5px solid $contact-color;
+$gifen-color: #e51c23;
+#gifen .card{
+  border-left: 5px solid $gifen-color;
+}
+
+$cardiology-color: #3f51b5;
+#cardiology .card{
+  border-left: 5px solid $cardiology-color;
+}
+
+$hemeid-color: #259b24;
+#hemeid .card{
+  border-left: 5px solid $hemeid-color;
 }
 
 /* Buzz Out */

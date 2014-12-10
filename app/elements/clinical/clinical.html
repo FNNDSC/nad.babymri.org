@@ -80,7 +80,7 @@
 		      <template repeat="{{people in clinical.feed.entry}}">
 		      <template if="{{people.gsx$section.$t === 'respiratory'}}">
 		      <template if="{{people.gsx$subsection.$t === 'member'}}">
-		      <card-element cardObject="{{people}}" cardLoaded="{{peopleLoaded}}" cardSelected="{{peopleSelected}}"></card-element>
+		      <card-element cardObject="{{people}}" cardLoaded="{{peopleLoaded}}" cardSelected="{{peopleSelected}}" cardExtra="true"></card-element>
 		      </template>
 		      </template>
 		      </template>
@@ -119,7 +119,7 @@
 		      <template repeat="{{people in clinical.feed.entry}}">
 		      <template if="{{people.gsx$section.$t === 'neurology'}}">
 		      <template if="{{people.gsx$subsection.$t === 'member'}}">
-		      <card-element cardObject="{{people}}" cardLoaded="{{peopleLoaded}}" cardSelected="{{peopleSelected}}"></card-element>
+		      <card-element cardObject="{{people}}" cardLoaded="{{peopleLoaded}}" cardSelected="{{peopleSelected}}" cardExtra="true"></card-element>
 		      </template>
 		      </template>
 		      </template>
@@ -144,11 +144,160 @@
 	      </div>
   
 	      </section>
+	      
+	      <section id="perinatal" class="element">
 
+              <div class="row card">
 
-    </div>
+		      <div class="title">Perinatal</div>
+                
+		      <div class='subsection'>Members</div>
+		      <div class='row'>
+		      <template if="{{clinical != null}}">
+		      <template repeat="{{people in clinical.feed.entry}}">
+		      <template if="{{people.gsx$section.$t === 'perinatal'}}">
+		      <template if="{{people.gsx$subsection.$t === 'member'}}">
+		      <card-element cardObject="{{people}}" cardLoaded="{{peopleLoaded}}" cardSelected="{{peopleSelected}}" cardExtra="true"></card-element>
+		      </template>
+		      </template>
+		      </template>
+		      </template>
+	              </div>
+	   
+		      <div class='subsection'>Current activity</div>
+		      <div id='perinatal_activity_p1' class='missionP'></div>
+		      <div id='perinatal_activity_p2' class='missionP'></div>
+		      <div id='perinatal_activity_p3' class='missionP'></div>
+  
+		      <div class='subsection'>Guidelines</div>
+		      <div id='perinatal_guidelines_p1' class='missionP'></div>
+		      <div id='perinatal_guidelines_p2' class='missionP'></div>
+		      <div id='perinatal_guidelines_p3' class='missionP'></div>
+  
+		      <div class='subsection'>References</div>
+		      <div id='perinatal_references_p1' class='missionP'></div>
+		      <div id='perinatal_references_p2' class='missionP'></div>
+		      <div id='perinatal_references_p3' class='missionP'></div>
+	   
+	      </div>
+  
+	      </section>
+
+	      <section id="gifen" class="element">
+
+              <div class="row card">
+
+		      <div class="title">GI/FEN</div>
+                
+		      <div class='subsection'>Members</div>
+		      <div class='row'>
+		      <template if="{{clinical != null}}">
+		      <template repeat="{{people in clinical.feed.entry}}">
+		      <template if="{{people.gsx$section.$t === 'gifen'}}">
+		      <template if="{{people.gsx$subsection.$t === 'member'}}">
+		      <card-element cardObject="{{people}}" cardLoaded="{{peopleLoaded}}" cardSelected="{{peopleSelected}}" cardExtra="true"></card-element>
+		      </template>
+		      </template>
+		      </template>
+		      </template>
+	              </div>
+	   
+		      <div class='subsection'>Current activity</div>
+		      <div id='gifen_activity_p1' class='missionP'></div>
+		      <div id='gifen_activity_p2' class='missionP'></div>
+		      <div id='gifen_activity_p3' class='missionP'></div>
+  
+		      <div class='subsection'>Guidelines</div>
+		      <div id='gifen_guidelines_p1' class='missionP'></div>
+		      <div id='gifen_guidelines_p2' class='missionP'></div>
+		      <div id='gifen_guidelines_p3' class='missionP'></div>
+  
+		      <div class='subsection'>References</div>
+		      <div id='gifen_references_p1' class='missionP'></div>
+		      <div id='gifen_references_p2' class='missionP'></div>
+		      <div id='gifen_references_p3' class='missionP'></div>
+	   
+	      </div>
+  
+	      </section>
+
+	      <section id="cardiology" class="element">
+
+              <div class="row card">
+
+		      <div class="title">Cardiologyy</div>
+                
+		      <div class='subsection'>Members</div>
+		      <div class='row'>
+		      <template if="{{clinical != null}}">
+		      <template repeat="{{people in clinical.feed.entry}}">
+		      <template if="{{people.gsx$section.$t === 'cardiology'}}">
+		      <template if="{{people.gsx$subsection.$t === 'member'}}">
+		      <card-element cardObject="{{people}}" cardLoaded="{{peopleLoaded}}" cardSelected="{{peopleSelected}}" cardExtra="true"></card-element>
+		      </template>
+		      </template>
+		      </template>
+		      </template>
+	              </div>
+	   
+		      <div class='subsection'>Current activity</div>
+		      <div id='cardiology_activity_p1' class='missionP'></div>
+		      <div id='cardiology_activity_p2' class='missionP'></div>
+		      <div id='cardiology_activity_p3' class='missionP'></div>
+  
+		      <div class='subsection'>Guidelines</div>
+		      <div id='cardiology_guidelines_p1' class='missionP'></div>
+		      <div id='cardiology_guidelines_p2' class='missionP'></div>
+		      <div id='cardiology_guidelines_p3' class='missionP'></div>
+  
+		      <div class='subsection'>References</div>
+		      <div id='cardiology_references_p1' class='missionP'></div>
+		      <div id='cardiology_references_p2' class='missionP'></div>
+		      <div id='cardiology_references_p3' class='missionP'></div>
+	   
+	      </div>
+  
+	      </section>
+
+	      <section id="hemeid" class="element">
+
+              <div class="row card">
+
+		      <div class="title">Heme/ID</div>
+                
+		      <div class='subsection'>Members</div>
+		      <div class='row'>
+		      <template if="{{clinical != null}}">
+		      <template repeat="{{people in clinical.feed.entry}}">
+		      <template if="{{people.gsx$section.$t === 'hemeid'}}">
+		      <template if="{{people.gsx$subsection.$t === 'member'}}">
+		      <card-element cardObject="{{people}}" cardLoaded="{{peopleLoaded}}" cardSelected="{{peopleSelected}}" cardExtra="true"></card-element>
+		      </template>
+		      </template>
+		      </template>
+		      </template>
+	              </div>
+	   
+		      <div class='subsection'>Current activity</div>
+		      <div id='hemeid_activity_p1' class='missionP'></div>
+		      <div id='hemeid_activity_p2' class='missionP'></div>
+		      <div id='hemeid_activity_p3' class='missionP'></div>
+  
+		      <div class='subsection'>Guidelines</div>
+		      <div id='hemeid_guidelines_p1' class='missionP'></div>
+		      <div id='hemeid_guidelines_p2' class='missionP'></div>
+		      <div id='hemeid_guidelines_p3' class='missionP'></div>
+  
+		      <div class='subsection'>References</div>
+		      <div id='hemeid_references_p1' class='missionP'></div>
+		      <div id='hemeid_references_p2' class='missionP'></div>
+		      <div id='hemeid_references_p3' class='missionP'></div>
+	   
+	      </div>
+  
+	      </section>
+
         </div>
-
       </div>
     </div>
 
