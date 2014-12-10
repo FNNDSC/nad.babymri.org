@@ -1,4 +1,4 @@
-<polymer-element name="card-element"  attributes="cardObject cardLoaded cardSelected">
+<polymer-element name="card-element"  attributes="cardObject cardLoaded cardSelected cardExtra">
 
   <template>
 
@@ -47,7 +47,17 @@
             <div class='event'>{{cardObject.gsx$l4.$t}}</div>
             <div></div>
           </div>
-        </div>
+
+	  <template if="{{cardExtra == 'true'}}">
+          <div id="info" class='clear'>
+            <div>Phone: {{cardObject.gsx$phone.$t}}</div>
+            <div>Fax: {{cardObject.gsx$fax.$t}}</div>
+            <div>Email: {{cardObject.gsx$email.$t}}</div>
+            <div></div>
+          </div>
+
+          </template>
+  </div>
 
         <div class="item-overlay top"><paper-button label="more information" on-click="{{toggleDialog}}" role="button" tabindex="0" aria-label="more information"></paper-button></div>
 

@@ -195,6 +195,10 @@ $hf-color: #259b24;
 */
 $respiratory-color: #5C6BC0;
 $neurology-color: #66BB6A;
+$perinatal-color: #FFCA28;
+$gifen-color: #EF5350;
+$cardiology-color: #5C6BC0;
+$hemeid-color: #66BB6A;
 
 $bch-color: #66BB6A;
 $ssh-color: #66BB6A;
@@ -224,6 +228,8 @@ $unix101-color: #ffc107;
                            (publication, $publication-color), (award,$award-color),
                            (talk, $talk-color),
                            (respiratory,$respiratory-color), (neurology, $neurology-color),
+                           (perinatal,$perinatal-color), (gifen, $gifen-color),
+                           (cardiology,$cardiology-color), (hemeid, $hemeid-color),
                            (bch,$bch-color), (ssh, $ssh-color),
                            (semc, $semc-color), (bh,$bh-color),
                            (wh, $wh-color), (hf,$hf-color),
