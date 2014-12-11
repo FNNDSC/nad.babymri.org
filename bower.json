@@ -9,10 +9,8 @@
     "jquery": "1.9",
     "polymer-jsonp": "PolymerLabs/polymer-jsonp#master",
     "flatiron-director": "PolymerLabs/flatiron-director",
-    "paper-button": "Polymer/paper-button",
-    "paper-dialog": "Polymer/paper-dialog",
-    "paper-tabs": "Polymer/paper-tabs",
-    "paper-shadow": "Polymer/paper-shadow"
+    "core-elements": "Polymer/core-elements",
+    "paper-elements": "Polymer/paper-elements"
   },
   "resolutions": {
     "polymer": "~0.5.1"

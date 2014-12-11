@@ -10,7 +10,6 @@
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width">
         <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
-        <link rel="stylesheet" href="styles/app.css">
  
         <!-- build:js scripts/preload.js -->
         <script src="bower_components/modernizr/modernizr.js"></script>
@@ -24,33 +23,12 @@
 
         <!-- Place your HTML imports here -->
 	<link rel="import" href="elements.html">
+	<link rel="import" href="elements/app/app.html">
 	<!-- <link rel="import" href="elements/container.html">-->
     </head>
     <body fullbleed layout vertical>
-	    <core-drawer-panel id="dawerPanel">
-	    <core-header-panel drawer mode="waterfall">
-	      <core-toolbar class='core-header'> Menu
-	      </core-toolbar>
-	      <core-menu>
-	        <core-item label="home"> </core-item>
-	        <core-item label="highlights"></core-item>
-	      </core-menu>
-	    </core-header-panel>
-	    <core-header-panel main mode="waterfall">
-	      <core-toolbar class="core-header">
-	         <core-icon-button core-drawer-toggle icon="menu">
-	        </core-icon-button>
-	        <div class="bottom indent">MY APP</div>
-	      </core-toolbar>
-	      <div class="content">
-		      <div>
-			      IM IN!
-		      </div>
-	      </div>
-	      </core-header-panel>
-	      </core-drawer-panel>
-
-        <!-- JQUERY & BOOTSTRAP & OWL CAROUSEL-->
+            <app-element></app-element>   
+	    <!-- JQUERY & BOOTSTRAP & OWL CAROUSEL-->
 
         <!-- build:js scripts/postload.js -->
         <script src="bower_components/jquery/jquery.min.js"></script>

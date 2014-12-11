@@ -1,0 +1,35 @@
+@import url(http://fonts.googleapis.com/css?family=Roboto);
+
+body {
+  font-family: RobotoDraft, Roboto, sans-serif;
+}
+
+[main]{
+  background-color: #F9F9F9;
+}
+
+[drawer]{
+  background-color: #FFFFFF;
+  box-shadow:1px 0 1px rgba(0,0,0,.1);
+}
+
+.core-header{
+  background-color:#2196F3;
+  color: #FFF;
+}
+
+core-toolbar{background-color:#526E9C;color:#fff}
+
+core-animated-pages {
+	  width: 85%;
+	    height: 85%;
+	      -webkit-user-select: none;
+	        overflow: hidden;
+	}
+
+	core-animated-pages > * {
+		  border-radius: 5px;
+		    font-size: 50px;
+		      background-color: white;
+	      }
+

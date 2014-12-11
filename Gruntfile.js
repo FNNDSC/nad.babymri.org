@@ -97,18 +97,27 @@ module.exports = function (grunt) {
         connect: {
             options: {
                 port: 9000,
+		cors: true,
                 // change this to '0.0.0.0' to access the server from outside
                 hostname: '0.0.0.0'
             },
             livereload: {
                 options: {
-                    middleware: function (connect) {
-                        return [
-                            lrSnippet,
+			middleware: function(connect){
+					return [
+
+			    lrSnippet,
                             mountFolder(connect, '.tmp'),
-                            mountFolder(connect, yeomanConfig.app)
-                        ];
-                    }
+                            mountFolder(connect, yeomanConfig.app),
+			    function(req, res, next) {
+				    res.setHeader('Access-Control-Allow-Origin', '*');
+				    res.setHeader('Access-Control-Allow-Methods', '*');
+				    next();
+		            }
+
+				    ]
+			}
+
                 }
             },
             test: {

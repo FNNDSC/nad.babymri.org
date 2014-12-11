@@ -1,0 +1,101 @@
+<polymer-element name="app-element">
+<template>
+		<link rel="stylesheet" href="app.css"> 
+		
+		<core-drawer-panel id="dawerPanel">
+		
+			<core-header-panel drawer mode="waterfall">
+	     			<core-toolbar class='core-header'> Navigation </core-toolbar>
+				<core-menu on-core-select='{{selectActionT}}' >
+					<template repeat="{{pages as page}}">
+					<core-submenu icons='settings' label="{{page.label}}">
+							<template repeat="{{page.subpages as subpage}}">	
+								<core-item label="{{subpage.label}}" hash="#/{{page.label}}/{{subpage.label}}" ><a href="#/{{page.label}}/{{subpage.label}}"></core-item>
+							</template>
+				
+						</core-submenu>
+							
+					</template>
+	      			</core-menu>
+			</core-header-panel>
+
+	    		<core-header-panel main mode="waterfall-tall">
+	      			<core-toolbar class="core-header">
+	         			<core-icon-button core-drawer-toggle icon="menu"></core-icon-button>
+	        			<div id='pageTitle' class="bottom indent">MY APP</div>
+	     			 </core-toolbar>
+	      			<div class="content" layout horizontal center-center fit>
+
+					<core-animated-pages  id='allPages' valueattr='hash' transitions="slide-from-right">
+						<template repeat="{{page in pages}}">
+							<template repeat="{{page.subpages as subpage}}">	
+								<section hash="#/{{page.label}}/{{subpage.label}}" layout vertical center-center>
+					          			<div>{{subpage.label}}</div>
+						      		</section>
+							</template>
+						</template>
+					</core-animated-pages>
+				</div>
+	      		</core-header-panel>
+	      	</core-drawer-panel>
+	</template>
+
+	<script>
+		Polymer('app-element', {
+			// here we define the whole architecture of the website
+			// this is enough to have the right 'empty pages'
+		        // * COULD get that from online spreadsheet...*
+			pages: [
+				{id: 'home', label: 'home', subpages: [
+					{id:'home-introduction', label: 'introduction', element: 'intro-element'}
+				]},
+				{id: 'research', label: 'research', subpages: [
+					{id:'research-introduction', label: 'introduction', element: 'intro-element'},
+					{id:'research-mri', label: 'mri', element: 'research-element'},
+					{id:'research-nirs', label: 'nirs', element: 'research-element'},
+					{id:'research-meg', label: 'meg', element: 'research-element'}
+				]},
+				{id: 'highlights', label: 'highlights', subpages: [
+					{id:'highlights-introduction', label: 'introduction', element: 'intro-element'},
+					{id:'highlights-twothousanddfourteen', label: '2014', element: 'highlight-element'}
+				]},
+				{id: 'softwares', label: 'softwares', subpages:[
+					 {id:'softwares-introduction', label: 'introduction', element: 'intro-element'},	
+					 {id:'softwares-chris', label: 'chris', element: 'software-element'},	
+				]},
+				{id: 'team', label: 'team', subpages:[
+					{id:'team-introduction', label: 'introduction', element: 'introduction-element', loaded:0},
+					{id:'team-faculty', label: 'faculty', element:'team-element', loaded:0}
+				]},
+			/*	{id: 'contact', label: 'contact'},
+				{id: 'live', label: 'live'},
+				{id: 'calendar', label: 'calendar'},
+				*/],
+				selectActionT: function(e, detail) {
+						        //window.console.log('++++TOP++++');
+						        //window.console.log(detail);
+							if (detail.isSelected) {
+								// get right hash!
+								if(typeof(detail.item.children[0].hash) !== 'undefined'){
+									window.console.log(detail.item.children[0].hash);
+
+									var test = detail.item.children[0].hash.split('/');
+									this.$.pageTitle.innerHTML = test[1] + ' > ' + test[2];
+								window.console.log(test);
+						                this.$.allPages.selected = detail.item.children[0].hash;
+
+								}
+					  }
+					 },
+				selectAction: function(e, detail) {
+						      /*  window.console.log('----SUB----');
+						         window.console.log(detail);
+					  if (detail.isSelected) {
+						      var selectedItem = detail.item;
+						         window.console.log(this.route);
+						         window.console.log(this.subroute);
+						 }*/
+					 }
+		});
+	</script>
+</polymer-element>
