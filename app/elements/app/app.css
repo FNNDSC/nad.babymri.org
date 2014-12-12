@@ -18,18 +18,40 @@ body {
   color: #FFF;
 }
 
-core-toolbar{background-color:#526E9C;color:#fff}
+#drawerToolbar{
+  background-color: #F9F9F9;
+  color: #000;
+}
+
+#pageToolbar{
+	/* Firefox */
+	-moz-transition: background-color .4s ease-in;
+	/* WebKit */
+	-webkit-transition: background-color .4s ease-in;
+	/* Opera */
+	-o-transition: background-color .4s ease-in;
+	/* Standard */
+	transition: background-color .4s ease-in;
+}
+core-toolbar{
+	background-color:#526E9C;
+	color:#fff
+}
 
 core-animated-pages {
-	  width: 85%;
-	    height: 85%;
-	      -webkit-user-select: none;
-	        overflow: hidden;
-	}
+       	width: 85%;
+	height: 85%;	
+  	-webkit-user-select: none;
+	overflow: hidden;
+}
 
-	core-animated-pages > * {
-		  border-radius: 5px;
-		    font-size: 50px;
-		      background-color: white;
-	      }
+core-animated-pages > * {
+	border-radius: 5px;
+	font-size: 50px;
+	background-color: white;
+}
 
+.nav{
+	color: inherit;
+	text-decoration: none;
+}
