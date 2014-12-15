@@ -9,6 +9,7 @@
     "jquery": "1.9",
     "polymer-jsonp": "PolymerLabs/polymer-jsonp#master",
     "flatiron-director": "PolymerLabs/flatiron-director",
+    "more-routing": "polymore/more-routing",
     "core-elements": "Polymer/core-elements",
     "paper-elements": "Polymer/paper-elements"
   },

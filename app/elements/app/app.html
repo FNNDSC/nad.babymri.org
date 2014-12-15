@@ -8,9 +8,9 @@
 		
 			<core-header-panel drawer mode="waterfall">
 	     			<core-toolbar id='drawerToolbar' class='core-header'> Navigation </core-toolbar>
-				<core-menu on-core-select='{{selectActionT}}' >
+				<core-menu on-core-select='{{selectActionT}}' id='iam-core-menu'>
 					<template repeat="{{pages as page}}">
-					<core-submenu id='{{page.id}}-core-submenu' icons='settings' label="{{page.label}}">
+					<core-submenu on-core-select='{{ selectActionST }}' id='{{page.id}}-core-submenu' icons='settings' label="{{page.label}}">
 							<template repeat="{{page.subpages as subpage}}">	
 								<core-item label="{{subpage.label}}" hash="#{{page.label}}/{{subpage.label}}" ><a href="#{{page.label}}/{{subpage.label}}"></core-item>
 							</template>
@@ -21,26 +21,29 @@
 	      			</core-menu>
 			</core-header-panel>
 
-	    		<core-header-panel main mode="waterfall-tall">
+	    		<core-header-panel id='waterFallTall' main mode="waterfall-tall">
 	      			<core-toolbar id='pageToolbar' class="core-header">
 	         			<core-icon-button core-drawer-toggle icon="menu"></core-icon-button>
-	        			<div id='pageTitle' class="bottom indent">MY APP</div>
+					<div class="bottom indent">
+						<div id='pageTitle' class='title'>MY APP</div>
+					</div>
 	     			 </core-toolbar>
-	      			<div class="content" layout horizontal center-center fit>
-
+	      			<div id="awesomeContent" class="content" layout vertical center-center>
 					<core-animated-pages  id='allPages' valueattr='hash' transitions="slide-from-right">
 						<template repeat="{{page in pages}}">
 							<template repeat="{{page.subpages as subpage}}">	
-								<section hash="#{{page.label}}/{{subpage.label}}" layout vertical center-center>
-								<div>{{subpage.label}}</div>
-								<!-- prev and next buttons -->
-								<a class='nav' id="{{subpage.id}}-prev" href=""><paper-button><div class='label'>prev</div></paper-button></a>
+							<section id='{{ subpage.id}}' hash="#{{page.label}}/{{subpage.label}}" layout vertical center-center fit>
+					
+							{{ subpage.id }}
+
+							<!-- should not be part of the page -->
+						         	<a class='nav' id="{{subpage.id}}-prev" href=""><paper-button><div class='label'>prev</div></paper-button></a>
 								<a class='nav' id="{{subpage.id}}-next" href=""><paper-button><div class='label'>next</div></paper-button></a>
 						      		</section>
 							</template>
 						</template>
 					</core-animated-pages>
-				</div>
+									</div>
 	      		</core-header-panel>
 	      	</core-drawer-panel>
 	</template>
@@ -73,9 +76,20 @@
 					{id:'team-faculty', label: 'faculty', element:'team-element', loaded:0}
 				]},
 			],
+			selectActionST: function(e, detail) {
+			        window.console.log('++++ST++++');
+			        window.console.log(detail);
+				if (detail.isSelected) {
+					// get right hash!
+			/*		if(typeof(detail.item.children[0].hash) !== 'undefined'){
+						//var test = detail.item.children[0].hash.split('/');
+						// 0, 1, 2
+					}
+			*/	  }
+			},
 			selectActionT: function(e, detail) {
-			        //window.console.log('++++TOP++++');
-			        //window.console.log(detail);
+			        window.console.log('++++T++++');
+			        window.console.log(detail);
 				if (detail.isSelected) {
 					// get right hash!
 			/*		if(typeof(detail.item.children[0].hash) !== 'undefined'){
@@ -144,13 +158,10 @@
 				}
 			
 				// select right page (core-selector, find with id-core-submenu)
-				window.console.log(this.$[this.page.section + '-core-submenu']);
-				//this.$[this.page.section + '-core-submenu'].selected = cur[0];
-				//..
-
-				// select right subpage (core-selector submenu-id)
-				//..
-
+				if(this.$['iam-core-menu'].selected != cur[0]){
+				  this.$['iam-core-menu'].selected = cur[0];
+				}
+				this.$[this.page.section + '-core-submenu'].selected = 2*cur[1];
 
                         	// set title
 				this.$.pageTitle.innerHTML = this.page.section + ' > ' + this.page.subsection;
@@ -164,6 +175,8 @@
 				this.$[this.page.id + '-next'].getElementsByClassName('label')[0].innerHTML = this.pages[next[0]].subpages[next[1]].label;
 				// select right page to trigger transition
 				this.$.allPages.selected = '#' + this.page.section + '/' + this.page.subsection;
+				
+				this.$.waterFallTall.shadowRoot.getElementById('mainContainer').scrollTop = 0;
 			}
 
 		});

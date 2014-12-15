@@ -24,29 +24,34 @@ body {
 }
 
 #pageToolbar{
-	/* Firefox */
-	-moz-transition: background-color .4s ease-in;
-	/* WebKit */
-	-webkit-transition: background-color .4s ease-in;
-	/* Opera */
-	-o-transition: background-color .4s ease-in;
-	/* Standard */
-	transition: background-color .4s ease-in;
+	-moz-transition: background-color .4s, font .18s, height .18s ease;
+	-webkit-transition: background-color .4s,  font .18s, height .18s ease;
+	-o-transition: background-color .4s, font .18s, height  .18s ease;
+	transition: background-color .4s, font .18s, height .18s ease;
+	font-size: 1.2em;
 }
+
+
+#pageToolbar.tall .title{
+	transition: background-color .4s, font .18s, height .18s ease;
+	font-size: 2em;
+}
+
 core-toolbar{
 	background-color:#526E9C;
 	color:#fff
 }
 
 core-animated-pages {
-       	width: 85%;
-	height: 85%;	
-  	-webkit-user-select: none;
-	overflow: hidden;
+        height:2000px;
+	width: 85%;
+      /* 	min-height:100%;
+ */ 	-webkit-user-select: none;
+	overflow-x: hidden;
+	overflow-y: auto;
 }
 
 core-animated-pages > * {
-	border-radius: 5px;
 	font-size: 50px;
 	background-color: white;
 }
