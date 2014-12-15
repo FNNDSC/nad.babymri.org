@@ -28,9 +28,13 @@ body {
 	-webkit-transition: background-color .4s,  font .18s, height .18s ease;
 	-o-transition: background-color .4s, font .18s, height  .18s ease;
 	transition: background-color .4s, font .18s, height .18s ease;
-	font-size: 1.2em;
 }
 
+ #pageToolbar .title{
+	transition: background-color .4s, font .18s, height .18s ease;
+	font-size: 1em;
+
+ }
 
 #pageToolbar.tall .title{
 	transition: background-color .4s, font .18s, height .18s ease;
