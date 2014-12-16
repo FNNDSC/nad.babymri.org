@@ -4,44 +4,32 @@
   <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
 
   <div class='footer' horizontal layout>
-    <a id='previous' class='nav' href="" style="width:50%; position:relative;display: inline-block;">
-
-       <div class='label'></div>
-
-<paper-ripple class="recenteringTouch" fit=""></paper-ripple>
-<!--     <display: inline-block;
-Submitposition: relative;> -->
-
-<!-- <div layout horizontal>
-        <div horizontal layout end><i class="fa fa-angle-left" style='font-size: 2em;'></i> </div>
-        <div layout vertical style='text-align: left'>
-          <div flex>previous</div>
-          <div class='label' flex>prev</div>
+    <a id='previous' class='nav grow' href="" style="position:relative;">
+    <div id='previousContainer' class='grow' layout horizontal style='padding-left: 40px;'>
+        <div style="margin-right: 10px;">
+          <i class="fa fa-angle-left" style=''></i>
         </div>
-      </div> -->
+        <div class='grow previous'>
+          <div class='hint'>Previous</div>
+          <div class='label'>prev</div>
+        </div>
+      </div>
 
-<!--       <paper-button style="width:100%">
-      
-    </paper-button> -->
+      <paper-ripple class="recenteringTouch" fit=""></paper-ripple>
 
     </a>
-    <a class='nav' id="next" href="" style="width:50%; position:relative;display: inline-block;">
-    <div class='label'></div>
-
-<paper-ripple class="recenteringTouch" fit=""></paper-ripple>
-<!-- <div layout horizontal>
-        <div horizontal layout end><i class="fa fa-angle-right" style='font-size: 2em;'></i> </div>
-        <div layout vertical style='text-align: left'>
-          <div flex>previous</div>
-          <div class='label' flex>prev</div>
+    <a id='next' class='nav grow' href="" style="position:relative;">
+      <div class='grow' layout horizontal style='padding-right: 40px;'>
+        <div class='grow next'>
+          <div class='hint'>Next</div>
+          <div class='label'>prev</div>
         </div>
-      </div> -->
+        <div>
+          <i class="fa fa-angle-right" style="margin-left: 10px;"></i>
+        </div>
+      </div>
 
-<!--     <paper-button style="width:100%">
-
-      <div class='label'>next</div>
-      <i class="fa fa-angle-right"></i>
-    </paper-button> -->
+      <paper-ripple class="recenteringTouch" fit=""></paper-ripple>
 
     </a>
   </div>
@@ -61,8 +49,12 @@ Submitposition: relative;> -->
       this.$.next.getElementsByClassName('label')[0].innerHTML = this.next.label;
     },
     narrowChanged: function(){
-      window.console.log(this.narrow);
-
+      if(this.narrow){
+//this.$.previousContainer.addClass();
+      }
+      else{
+//this.$.previousContainer.removeClass();
+      }
     }
   });
 </script>
