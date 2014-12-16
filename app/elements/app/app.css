@@ -1,7 +1,5 @@
-@import url(http://fonts.googleapis.com/css?family=Roboto);
-
 body {
-  font-family: RobotoDraft, Roboto, sans-serif;
+font-family: RobotoDraft, 'Helvetica Neue', Helvetica, Arial;
 }
 
 [main]{
