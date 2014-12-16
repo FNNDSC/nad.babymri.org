@@ -30,11 +30,11 @@ body {
 	transition: background-color .4s, font .18s, height .18s ease;
 }
 
- #pageToolbar .title{
+#pageToolbar .title{
 	transition: background-color .4s, font .18s, height .18s ease;
 	font-size: 1em;
 
- }
+}
 
 #pageToolbar.tall .title{
 	transition: background-color .4s, font .18s, height .18s ease;
@@ -47,12 +47,11 @@ core-toolbar{
 }
 
 core-animated-pages {
-        height:2000px;
 	width: 85%;
-      /* 	min-height:100%;
- */ 	-webkit-user-select: none;
-	overflow-x: hidden;
-	overflow-y: auto;
+  position: inherit;
+  -webkit-user-select: none;
+  overflow-x: hidden;
+  overflow-y: auto;
 }
 
 core-animated-pages > * {
@@ -63,4 +62,13 @@ core-animated-pages > * {
 .nav{
 	color: inherit;
 	text-decoration: none;
+}
+#research-meg{
+  height: 3000px;
+
+}
+
+#research-nirs{
+  height: 2000px;
+
 }

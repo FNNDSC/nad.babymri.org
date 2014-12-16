@@ -1,0 +1,15 @@
+/*style goes here*/
+.footer{
+  color: #FFF;
+  font-size: .8em;
+  position: absolute;
+  bottom: 0;
+  left:0;
+  width: 100%;
+}
+
+
+.nav{
+  color: inherit;
+  text-decoration: none;
+}

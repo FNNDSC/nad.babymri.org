@@ -1,0 +1,43 @@
+<polymer-element name="footer-element" attributes="previous next narrow">
+<template>
+  <link rel="stylesheet" href="footer.css"> 
+  
+  <div class='footer' horizontal layout>
+    <a id='previous' class='nav' href="" style="width:50%">
+      <paper-button style="width:100%">
+      <div layout horizontal>
+        <div horizontal layout end><i class="fa fa-angle-left" style='font-size: 2em;'></i> </div>
+        <div layout vertical style='text-align: left'>
+          <div flex>previous</div>
+          <div class='label' flex>prev</div>
+        </div>
+      </div>
+    </paper-button></a>
+    <a class='nav' id="next" href="" style="width:50%"><paper-button style="width:100%">
+
+      <div class='label'>next</div>
+      <i class="fa fa-angle-right"></i>
+    </paper-button></a>
+  </div>
+
+</template>
+
+<script>
+  Polymer('footer-element', {
+    previousChanged: function(){
+      this.$.previous.style.backgroundColor = this.previous.color;
+      this.$.previous.href = this.previous.target;
+      this.$.previous.getElementsByClassName('label')[0].innerHTML = this.previous.label;
+    },
+    nextChanged: function(){
+      this.$.next.style.backgroundColor = this.next.color;
+      this.$.next.href = this.next.target;
+      this.$.next.getElementsByClassName('label')[0].innerHTML = this.next.label;
+    },
+    narrowChanged: function(){
+      window.console.log(this.narrow);
+
+    }
+  });
+</script>
+</polymer-element>
