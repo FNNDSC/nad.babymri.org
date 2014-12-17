@@ -126,7 +126,6 @@
 				var prev = [0, 0];
 				var cur = [0, 0];
 				var next = [0, 0];
-        window.console.log('hey');
 				for(var i=0; i<this.pages.length; i++){
 					if(this.pages[i].id === this.page.section){
 						// set color of the header
@@ -168,7 +167,7 @@
 						break;
 					}
 				}
-window.console.log('ho');
+
 				// select right page (core-selector, find with id-core-submenu)
 				if(this.$['iam-core-menu'].selected != cur[0]){
 					this.$['iam-core-menu'].selected = cur[0];
@@ -191,7 +190,6 @@ window.console.log('ho');
         };
         this.$['footer-' + this.page.id].next = nextFooter;
 
-window.console.log('there');
 				// select right page to trigger transition
 				this.$.allPages.selected = '#' + this.page.section + '/' + this.page.subsection;
 				

@@ -4,12 +4,12 @@
   <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
 
   <div class='footer' horizontal layout>
-    <a id='previous' class='nav grow' href="" style="position:relative;">
-    <div id='previousContainer' class='grow' layout horizontal style='padding-left: 40px;'>
-        <div style="margin-right: 10px;">
+    <a id='previous' class='nav fluid' href="" style="position:relative;">
+    <div class='fluid previousLayout' layout horizontal>
+        <div class="previousIcon">
           <i class="fa fa-angle-left" style=''></i>
         </div>
-        <div class='grow previous'>
+        <div class='fluid previousText'>
           <div class='hint'>Previous</div>
           <div class='label'>prev</div>
         </div>
@@ -18,14 +18,14 @@
       <paper-ripple class="recenteringTouch" fit=""></paper-ripple>
 
     </a>
-    <a id='next' class='nav grow' href="" style="position:relative;">
-      <div class='grow' layout horizontal style='padding-right: 40px;'>
-        <div class='grow next'>
+    <a id='next' class='nav fluid' href="" style="position:relative;">
+      <div class='fluid nextLayout' layout horizontal>
+        <div class='fluid nextText'>
           <div class='hint'>Next</div>
           <div class='label'>prev</div>
         </div>
         <div>
-          <i class="fa fa-angle-right" style="margin-left: 10px;"></i>
+          <i class="fa fa-angle-right nextIcon"></i>
         </div>
       </div>
 
@@ -50,9 +50,13 @@
     },
     narrowChanged: function(){
       if(this.narrow){
+        this.$.previous.getElementsByClassName('previousLayout')[0].classList.add('narrow');
+        this.$.next.getElementsByClassName('nextLayout')[0].classList.add('narrow');
 //this.$.previousContainer.addClass();
       }
       else{
+        this.$.previous.getElementsByClassName('previousLayout')[0].classList.remove('narrow');
+        this.$.next.getElementsByClassName('nextLayout')[0].classList.remove('narrow');
 //this.$.previousContainer.removeClass();
       }
     }
